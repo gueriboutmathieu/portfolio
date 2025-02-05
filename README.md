@@ -1,75 +1,26 @@
-# Nuxt Minimal Starter
+# Portfolio
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+My Portfolio.
 
 ## Setup
 
-Make sure to install dependencies:
+Install dependencies:
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+pnpm i
 ```
 
-## Development Server
+## Run locally
 
 Start the development server on `http://localhost:3000`:
 
-```bash
-# npm
-npm run dev
-
-# pnpm
+```shell
 pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## License
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+This project is licensed under the GNU General Public License v3.0 (GPL v3).
+You are free to use, modify, and distribute this software, as long as any distributed version is also licensed under GPLv3.
+This software is provided "as is", without warranty of any kind.
+See the [LICENSE](LICENSE) file for more details.
