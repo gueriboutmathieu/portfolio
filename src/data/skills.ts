@@ -13,7 +13,6 @@ import nativescriptImage from "@/assets/logos/nativescript.svg";
 import neovimImage from "@/assets/logos/neovim.svg";
 import nixosImage from "@/assets/logos/nixos.svg";
 import nuxtImage from "@/assets/logos/nuxt.svg";
-import primevueImage from "@/assets/logos/primevue.png";
 import pythonImage from "@/assets/logos/python.svg";
 import tailwindImage from "@/assets/logos/tailwind.svg";
 import terraformImage from "@/assets/logos/terraform.svg";
@@ -35,7 +34,6 @@ export const frSkills: Skill[] = [
             {tooltip: "Typescript", src: typescriptImage},
             {tooltip: "Nuxt.js", src: nuxtImage},
             {tooltip: "Angular", src: angularImage},
-            {tooltip: "Primevue", src: primevueImage},
             {tooltip: "Tailwind CSS", src: tailwindImage}
         ]
     },
@@ -83,7 +81,6 @@ export const enSkills: Skill[] = [
             {tooltip: "Typescript", src: typescriptImage},
             {tooltip: "Nuxt.js", src: nuxtImage},
             {tooltip: "Angular", src: angularImage},
-            {tooltip: "Primevue", src: primevueImage},
             {tooltip: "Tailwind CSS", src: tailwindImage}
         ]
     },

@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt"],
     css: [
         "@/assets/css/tailwind.css",
+        "@/assets/css/fonts.css",
         "@fortawesome/fontawesome-svg-core/styles.css",
     ],
     tailwindcss: {
@@ -18,6 +19,14 @@ export default defineNuxtConfig({
                 extend: {
                     colors: colors,
                 },
+            },
+        },
+    },
+    runtimeConfig: {
+        public: {
+            mistral: {
+                apiKey: process.env.MISTRAL_API_KEY,
+                model: process.env.MISTRA_MODEL,
             },
         },
     },
