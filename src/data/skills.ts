@@ -76,7 +76,7 @@ export const enSkills: Skill[] = [
         ]
     },
     {
-        name: "Front-end development with Typescript using Nuxt.js, Angular, Primevue, Tailwind CSS",
+        name: "Front-end development with Typescript using Nuxt.js, Angular, Tailwind CSS",
         images: [
             {tooltip: "Typescript", src: typescriptImage},
             {tooltip: "Nuxt.js", src: nuxtImage},
