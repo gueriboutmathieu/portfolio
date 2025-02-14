@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     tailwindcss: {
         exposeConfig: true,
         config: {
-            content: ["**/*.vue"],
+            content: ["*.vue"],
             theme: {
                 extend: {
                     colors: colors,
