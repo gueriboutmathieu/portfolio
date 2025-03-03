@@ -2,7 +2,7 @@
     <div class="h-full w-full flex flex-col items-end gap-5 text-lg">
         <div
             class="
-                h-[750px] w-[500px] bg-darkLight/50 backdrop-blur-md rounded-md shadow-2xl p-5
+                h-[calc(100vh*0.75)] w-[calc(100vw*0.3)] bg-darkLight/50 backdrop-blur-md rounded-md shadow-2xl p-5
                 flex flex-col justify-end
             "
             v-if="showChatbot"

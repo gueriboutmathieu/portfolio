@@ -1,24 +1,24 @@
 import { type Skill } from "@/models/skill";
 
-import angularImage from "@/assets/logos/angular.svg";
-import awsImage from "@/assets/logos/aws.svg";
-import dockerImage from "@/assets/logos/docker.svg";
-import fastapiImage from "@/assets/logos/fastapi.svg";
-import flutterImage from "@/assets/logos/flutter.svg";
-import githubActionsImage from "@/assets/logos/github_actions.svg";
-import helmImage from "@/assets/logos/helm.svg";
-import kubernetesImage from "@/assets/logos/kubernetes.svg";
-import linuxImage from "@/assets/logos/linux.svg";
-import nativescriptImage from "@/assets/logos/nativescript.svg";
-import neovimImage from "@/assets/logos/neovim.svg";
-import nixosImage from "@/assets/logos/nixos.svg";
-import nuxtImage from "@/assets/logos/nuxt.svg";
-import pythonImage from "@/assets/logos/python.svg";
-import tailwindImage from "@/assets/logos/tailwind.svg";
-import terraformImage from "@/assets/logos/terraform.svg";
-import typescriptImage from "@/assets/logos/typescript.svg";
-import vscodeImage from "@/assets/logos/vscode.svg";
-import zshImage from "@/assets/logos/zsh.svg";
+import angularImage from "@/assets/icons/angular.svg";
+import awsImage from "@/assets/icons/aws.svg";
+import dockerImage from "@/assets/icons/docker.svg";
+import fastapiImage from "@/assets/icons/fastapi.svg";
+import flutterImage from "@/assets/icons/flutter.svg";
+import githubActionsImage from "@/assets/icons/github_actions.svg";
+import helmImage from "@/assets/icons/helm.svg";
+import kubernetesImage from "@/assets/icons/kubernetes.svg";
+import linuxImage from "@/assets/icons/linux.svg";
+import nativescriptImage from "@/assets/icons/nativescript.svg";
+import neovimImage from "@/assets/icons/neovim.svg";
+import nixosImage from "@/assets/icons/nixos.svg";
+import nuxtImage from "@/assets/icons/nuxt.svg";
+import pythonImage from "@/assets/icons/python.svg";
+import tailwindImage from "@/assets/icons/tailwind.svg";
+import terraformImage from "@/assets/icons/terraform.svg";
+import typescriptImage from "@/assets/icons/typescript.svg";
+import vscodeImage from "@/assets/icons/vscode.svg";
+import zshImage from "@/assets/icons/zsh.svg";
 
 export const frSkills: Skill[] = [
     {
@@ -33,8 +33,8 @@ export const frSkills: Skill[] = [
         images: [
             {tooltip: "Typescript", src: typescriptImage},
             {tooltip: "Nuxt.js", src: nuxtImage},
+            {tooltip: "Tailwind CSS", src: tailwindImage},
             {tooltip: "Angular", src: angularImage},
-            {tooltip: "Tailwind CSS", src: tailwindImage}
         ]
     },
     {
@@ -80,8 +80,8 @@ export const enSkills: Skill[] = [
         images: [
             {tooltip: "Typescript", src: typescriptImage},
             {tooltip: "Nuxt.js", src: nuxtImage},
+            {tooltip: "Tailwind CSS", src: tailwindImage},
             {tooltip: "Angular", src: angularImage},
-            {tooltip: "Tailwind CSS", src: tailwindImage}
         ]
     },
     {

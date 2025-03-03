@@ -4,10 +4,12 @@ import { defineStore } from "pinia";
 import { Language } from "@/models/language";
 import type { Education } from "@/models/education";
 import type { Experience } from "@/models/experience";
+import type { Project } from "@/models/project";
 import type { Skill } from "@/models/skill";
 import { enBio, frBio } from "@/data/bio";
 import { enEducations, frEducations } from "~/data/educations";
 import { enExperiences, frExperiences } from "@/data/experiences";
+import { enProjects, frProjects } from "@/data/projects";
 import { enSkills, frSkills } from "@/data/skills";
 import { frSystemPrompt, enSystemPrompt } from "@/data/systemPrompt";
 import { enTitle, frTitle } from "@/data/title";
@@ -20,6 +22,7 @@ export const createMainStore = defineStore("mainStore", () => {
         educations: Education[];
         experiences: Experience[];
         skills: Skill[];
+        projects: Project[];
         systemPrompt: string;
     }>({
         language: Language.FR,
@@ -28,6 +31,7 @@ export const createMainStore = defineStore("mainStore", () => {
         educations: frEducations,
         experiences: frExperiences,
         skills: frSkills,
+        projects: frProjects,
         systemPrompt: frSystemPrompt
     });
 
@@ -43,6 +47,7 @@ export const createMainStore = defineStore("mainStore", () => {
         _state.educations = language === Language.FR ? frEducations : enEducations;
         _state.experiences = language === Language.FR ? frExperiences : enExperiences;
         _state.skills = language === Language.FR ? frSkills : enSkills;
+        _state.projects = language === Language.FR ? frProjects : enProjects;
         _state.systemPrompt = language === Language.FR ? frSystemPrompt : enSystemPrompt;
     };
 

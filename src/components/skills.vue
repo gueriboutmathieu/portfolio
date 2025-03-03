@@ -1,13 +1,16 @@
 <template>
-    <div class="h-full w-full flex flex-col items-center justify-center">
-        <div v-for="skill in skills" class="flex flex-col">
-            <span>{{ skill.name }}</span>
-            <div v-for="image in skill.images" class="flex flex-row">
-                <img
-                    :src="image.src"
-                    class="w-10 h-10"
-                >
-                <span>{{ image.tooltip }}</span>
+    <div class="h-full w-full flex items-center justify-center">
+        <div class="flex flex-col items-start justify-start gap-5">
+            <div v-for="skill in skills">
+                <span>{{ skill.name }}</span>
+                <div class="flex flex-row justify-start pt-2.5 gap-5">
+                    <button 
+                        v-for="image in skill.images" 
+                        class="bg-darkLight rounded-md p-2.5 hover:bg-white"
+                    >
+                        <img :src="image.src" class="w-10 h-auto">
+                    </button>
+                </div>
             </div>
         </div>
     </div>
