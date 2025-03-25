@@ -32,10 +32,10 @@ export const createMainStore = defineStore("mainStore", () => {
         experiences: frExperiences,
         skills: frSkills,
         projects: frProjects,
-        systemPrompt: frSystemPrompt
+        systemPrompt: frSystemPrompt,
     });
 
-    const state = computed(function(): typeof _state {
+    const state = computed(function (): typeof _state {
         const stateCopy = cloneDeep(_state);
         return Object.freeze(stateCopy);
     });
@@ -51,12 +51,9 @@ export const createMainStore = defineStore("mainStore", () => {
         _state.systemPrompt = language === Language.FR ? frSystemPrompt : enSystemPrompt;
     };
 
-    const userLanguage = navigator.language.startsWith("fr") ? Language.FR : Language.EN;
-    setLanguage(userLanguage);
-
     return {
         state,
-        setLanguage
+        setLanguage,
     };
 });
 

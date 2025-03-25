@@ -2,9 +2,40 @@ import { type Experience } from "@/models/experience";
 
 export const frExperiences: Experience[] = [
     {
-        title: "Apprenti Développeur Full Stack",
+        title: "Développeur Full-Stack",
+        company: "Dedomainia",
+        companyDescription: "Logiciels dédiés aux acteurs du swap de longévité aux UK et USA, CDI",
+        location: "Bordeaux, France",
+        startDate: new Date("2024-11"),
+        endDate: new Date("2025-01"),
+        missions: ["Développement de fonctionnalités en Python Django"],
+    },
+    {
+        title: "Développeur Full-Stack",
+        company: "Araïko.ai",
+        companyDescription: "Conseil et apport de solutions clés en mains en Data / IA",
+        location: "Lyon, France",
+        startDate: new Date("2020-12"),
+        endDate: new Date("2024-10"),
+        missions: [
+            "Développement de endpoints FastAPI",
+            "Construction et migration de bases de données PostgreSQL avec SQLAlchemy et Alembic",
+            "Déploiement de nombreuses applications sur Kubernetes avec Helm et ArgoCD",
+            "Développement de plusieurs modules Terraform pour déployer de nouvelles architectures cloud",
+            "Développement d'une app PWA en NuxtJS",
+            "Développement d'un module de RAG en Python avec LlamaIndex et Weaviate permettant de faire du prompting sur base de connaissances",
+            "Développement d'une API en Python avec FastAPI permettant de prompter un LLM avec de la validation en entrée et en sortie du LLM en JsonSchema",
+            "Développement d'une web app minimaliste permettant de discuter avec un LLM en speech to speech",
+            "Développement d'une web app en ReactJS du suivi de la pose du corps en temps réel avec Mediapipe",
+            "Développement d'un scraper en Python avec Beautifulsoup pour récupérer des informations de produits sur des sites constructeurs",
+            "Analyse de la base de données ouverte des permis de construire français pour identifier des cas d'usages clients en Python avec Pandas",
+            "Maintenance et mise à jour des clusters Kubernetes",
+        ],
+    },
+    {
+        title: "Apprenti Développeur Full-Stack",
         company: "Stelliant",
-        companyDescription: "Expertise en assurance",
+        companyDescription: "Expertise en assurance, apprentissage",
         location: "Colombes, France",
         startDate: new Date("2019-07"),
         endDate: new Date("2020-07"),
@@ -12,45 +43,47 @@ export const frExperiences: Experience[] = [
             "Développement d'un formulaire web avec AngularJS",
             "Développement d'une application web avec Angular",
             "Développement de services REST API avec Java Spring Boot",
-        ]
-    },
-    {
-        title: "Apprenti Ingénieur Full Stack",
-        company: "Araïko (anciennement Cynapps)",
-        companyDescription: "Conseil et apport de solutions clés en mains en Data / IA",
-        location: "Lyon, France",
-        startDate: new Date("2020-12"),
-        endDate: new Date("2023-08"),
-        missions: [
-            "Développement back-end avec Python (FastAPI)",
-            "DevOps: AWS, Kubernetes, Helm, Docker, Github Actions, Terraform",
-            "Scraping de données avec Python (BeautifulSoup)",
-            "Analyse de données avec Python (Pandas, Numpy)",
-            "Un peu de développement front-end avec React.js",
-            "R&D et veille technologique"
-        ]
-    },
-    {
-        title: "Ingénieur Full Stack",
-        company: "Araïko (anciennement Cynapps)",
-        companyDescription: "Conseil et apport de solutions clés en mains en Data / IA",
-        location: "Lyon, France",
-        startDate: new Date("2023-08"),
-        endDate: new Date(),
-        missions: [
-            "Développement back-end avec Python (FastAPI)",
-            "Développement front-end avec Nuxt.js",
-            "DevOps: AWS, Kubernetes, Helm, Docker, Github Actions, Terraform",
-            "R&D et veille technologique"
-        ]
+        ],
     },
 ];
 
 export const enExperiences: Experience[] = [
     {
-        title: "Full Stack Developer Apprentice",
+        title: "Full-Stack Developer",
+        company: "Dedomainia",
+        companyDescription: "Software dedicated to longevity swap actors in the UK and USA, Permanent contract",
+        location: "Bordeaux, France",
+        startDate: new Date("2024-11"),
+        endDate: new Date("2025-01"),
+        missions: ["Development of features with Python Django"],
+    },
+    {
+        title: "Full-Stack Developer",
+        company: "Araïko.ai",
+        companyDescription:
+            "Consulting and providing turnkey solutions in Data / AI, apprenticeship then permanent contract",
+        location: "Lyon, France",
+        startDate: new Date("2020-12"),
+        endDate: new Date("2024-10"),
+        missions: [
+            "Development of FastAPI endpoints",
+            "Building and migrating PostgreSQL databases with SQLAlchemy and Alembic",
+            "Deployment of many applications on Kubernetes with Helm and ArgoCD",
+            "Development of several Terraform modules to deploy new cloud architectures",
+            "Development of a PWA app with NuxtJS",
+            "Development of a RAG module in Python with LlamaIndex and Weaviate for knowledge-based prompting",
+            "Development of a Python API with FastAPI that prompts an LLM with input and output validation using JsonSchema",
+            "Development of a minimalist web app for speech-to-speech interaction with an LLM",
+            "Development of a ReactJS web app for real-time body pose tracking using Mediapipe",
+            "Development of a Python scraper with BeautifulSoup to retrieve product information from manufacturer websites",
+            "Analysis of the open database of french building permits to identify customer use cases in Python with Pandas",
+            "Maintenance and update of Kubernetes clusters",
+        ],
+    },
+    {
+        title: "Full-Stack Developer Apprentice",
         company: "Stelliant",
-        companyDescription: "Insurance expertise",
+        companyDescription: "Insurance expertise, apprenticeship",
         location: "Colombes, France",
         startDate: new Date("2019-07"),
         endDate: new Date("2020-07"),
@@ -58,36 +91,6 @@ export const enExperiences: Experience[] = [
             "Development of a web form with AngularJS",
             "Development of a web application with Angular",
             "Development of REST API services with Java Spring Boot",
-        ]
-    },
-    {
-        title: "Full Stack Engineer Apprentice",
-        company: "Araïko (formerly Cynapps)",
-        companyDescription: "Consulting and providing turnkey solutions in Data / AI",
-        location: "Lyon, France",
-        startDate: new Date("2020-12"),
-        endDate: new Date("2023-08"),
-        missions: [
-            "Back-end development with Python (FastAPI)",
-            "DevOps: AWS, Kubernetes, Helm, Docker, Github Actions, Terraform",
-            "Data scraping with Python (BeautifulSoup)",
-            "Data analysis with Python (Pandas, Numpy)",
-            "A little front-end development with React.js",
-            "R&D and technological watch"
-        ]
-    },
-    {
-        title: "Full Stack Engineer",
-        company: "Araïko (formerly Cynapps)",
-        companyDescription: "Consulting and providing turnkey solutions in Data / AI",
-        location: "Lyon, France",
-        startDate: new Date("2023-08"),
-        endDate: new Date(),
-        missions: [
-            "Back-end development with Python (FastAPI)",
-            "Front-end development with Nuxt.js",
-            "DevOps: AWS, Kubernetes, Helm, Docker, Github Actions, Terraform",
-            "R&D and technological watch"
-        ]
+        ],
     },
 ];

@@ -10,4 +10,4 @@ export default {
     pink: "#FF79C6",
     yellow: "#F1FA8C",
     orange: "#FFB86C",
-}
+};

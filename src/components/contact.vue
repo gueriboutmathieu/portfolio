@@ -10,7 +10,7 @@
         <a href="https://www.linkedin.com/in/mathieu-gueribout" target="_blank">
             <FontAwesomeIcon
                 class="text-white hover:text-lightBlue transform hover:scale-125"
-                icon="fa-brands fa-linkedin" 
+                icon="fa-brands fa-linkedin"
                 size="6x"
             />
         </a>
@@ -24,6 +24,4 @@
     </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>

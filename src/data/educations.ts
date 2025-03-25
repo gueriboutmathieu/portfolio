@@ -30,7 +30,7 @@ export const frEducations: Education[] = [
         location: "Cergy, France",
         startDate: new Date("2013-09"),
         endDate: new Date("2017-09"),
-    }
+    },
 ];
 
 export const enEducations: Education[] = [
@@ -63,5 +63,5 @@ export const enEducations: Education[] = [
         location: "Cergy, France",
         startDate: new Date("2013-09"),
         endDate: new Date("2017-09"),
-    }
+    },
 ];

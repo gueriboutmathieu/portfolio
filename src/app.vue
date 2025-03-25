@@ -15,7 +15,7 @@ const mainStore = createMainStore();
 const chatbotService: ChatbotService = createChatbotService(
     runtimeConfig.public.mistral.apiKey,
     runtimeConfig.public.mistral.model,
-    mainStore
+    mainStore,
 );
 
 nuxtApp.provide("mainStore", mainStore);
@@ -23,7 +23,8 @@ nuxtApp.provide("chatbotService", chatbotService);
 </script>
 
 <style>
-body, html {
-    background-color: #282A36;
+body,
+html {
+    background-color: #282a36;
 }
 </style>

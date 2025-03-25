@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full w-1/2 transform translate-x-1/2 flex items-center justify-center text-xl">
+    <div class="h-full w-1/2 transform translate-x-1/2 flex items-center justify-center text-3xl">
         <div class="text-white">
             <p v-html="bio" />
         </div>

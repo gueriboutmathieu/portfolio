@@ -9,32 +9,34 @@ export const frProjects: Project[] = [
         image: "/assets/portfolio.png",
         github: "https://github.com/gueriboutmathieu/portfolio",
         technologies: [
-            {name: "Nuxt.js", icon: nuxtImage},
-            {name: "TailwindCSS", icon: tailwindImage},
+            { name: "Nuxt.js", icon: nuxtImage },
+            { name: "TailwindCSS", icon: tailwindImage },
         ],
     },
     {
         title: "Meri Server",
-        description: "Le serveur de Meri, votre fidèle compagnon qui vous aide à rester organisé et à vous souvenir de ce qui compte vraiment.",
+        description:
+            "Le serveur de Meri, votre fidèle compagnon qui vous aide à rester organisé et à vous souvenir de ce qui compte vraiment.",
         image: "/assets/meri.png",
         github: "https://github.com/gueriboutmathieu/meri_server",
         technologies: [
-            {name: "Python", icon: ""},
-            {name: "FastAPI", icon: ""},
-            {name: "PostgreSQL", icon: ""},
+            { name: "Python", icon: "" },
+            { name: "FastAPI", icon: "" },
+            { name: "PostgreSQL", icon: "" },
         ],
     },
     {
         title: "Meri Web",
-        description: "La web app de Meri, votre fidèle compagnon qui vous aide à rester organisé et à vous souvenir de ce qui compte vraiment.",
+        description:
+            "La web app de Meri, votre fidèle compagnon qui vous aide à rester organisé et à vous souvenir de ce qui compte vraiment.",
         image: "/assets/meri.png",
         github: "https://github.com/gueriboutmathieu/meri_web",
         technologies: [
-            {name: "Python", icon: ""},
-            {name: "FastAPI", icon: ""},
-            {name: "PostgreSQL", icon: ""},
+            { name: "Python", icon: "" },
+            { name: "FastAPI", icon: "" },
+            { name: "PostgreSQL", icon: "" },
         ],
-    }
+    },
 ];
 
 export const enProjects: Project[] = [
@@ -44,30 +46,32 @@ export const enProjects: Project[] = [
         image: "/assets/portfolio.png",
         github: "https://github.com/gueriboutmathieu/portfolio",
         technologies: [
-            {name: "Nuxt.js", icon: nuxtImage},
-            {name: "TailwindCSS", icon: tailwindImage},
+            { name: "Nuxt.js", icon: nuxtImage },
+            { name: "TailwindCSS", icon: tailwindImage },
         ],
     },
     {
         title: "Meri Server",
-        description: "The server of Meri, your loyal companion that helps you stay organized and remember what truly matters.",
+        description:
+            "The server of Meri, your loyal companion that helps you stay organized and remember what truly matters.",
         image: "/assets/meri.png",
         github: "https://github.com/gueriboutmathieu/meri_server",
         technologies: [
-            {name: "Python", icon: ""},
-            {name: "FastAPI", icon: ""},
-            {name: "PostgreSQL", icon: ""},
+            { name: "Python", icon: "" },
+            { name: "FastAPI", icon: "" },
+            { name: "PostgreSQL", icon: "" },
         ],
     },
     {
         title: "Meri Web",
-        description: "The web app of Meri, your loyal companion that helps you stay organized and remember what truly matters.",
+        description:
+            "The web app of Meri, your loyal companion that helps you stay organized and remember what truly matters.",
         image: "/assets/meri.png",
         github: "https://github.com/gueriboutmathieu/meri_web",
         technologies: [
-            {name: "Python", icon: ""},
-            {name: "FastAPI", icon: ""},
-            {name: "PostgreSQL", icon: ""},
+            { name: "Python", icon: "" },
+            { name: "FastAPI", icon: "" },
+            { name: "PostgreSQL", icon: "" },
         ],
-    }
+    },
 ];

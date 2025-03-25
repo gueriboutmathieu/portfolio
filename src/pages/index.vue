@@ -53,12 +53,17 @@
             class="section h-full w-full"
             @wheel="(e) => scrollTo(e, 'contact', 'education')"
             @touchmove="(e) => touchTo(e, 'contact', 'education')"
+            @keyup.up="console.log('up')"
+            @keyup.down="console.log('down')"
         >
             <Contact />
         </section>
     </div>
     <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2">
         <Bar @onNavigateTo="navigateTo" />
+    </div>
+    <div class="absolute top-5 left-5">
+        <DownloadResumeButton />
     </div>
     <div class="absolute top-5 right-5">
         <LanguageSwitcher />
@@ -94,7 +99,9 @@ function scrollTo(event: WheelEvent, nextSection: string, previousSection: strin
     }
     navigateTo(section);
 
-    setTimeout(() => { isScrolling.value = false; }, 100);
+    setTimeout(() => {
+        isScrolling.value = false;
+    }, 100);
 }
 
 function navigateTo(section: string) {

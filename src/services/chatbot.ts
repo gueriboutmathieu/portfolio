@@ -6,23 +6,23 @@ export type ChatbotService = {
 };
 
 export function createChatbotService(apiKey: string, model: string, mainStore: MainStore): ChatbotService {
-    const client = new Mistral({apiKey: apiKey});
+    const client = new Mistral({ apiKey: apiKey });
     const _model = model;
-    const systemPrompt = computed(function() {
+    const systemPrompt = computed(function () {
         return mainStore.state.systemPrompt;
     });
 
-    const query = async function(prompt: string): Promise<string> {
+    const query = async function (prompt: string): Promise<string> {
         const response = await client.chat.complete({
             model: _model,
             temperature: 0,
             messages: [
-                {role: "system", content: systemPrompt.value},
-                {role: "user", content: prompt}
-            ]
+                { role: "system", content: systemPrompt.value },
+                { role: "user", content: prompt },
+            ],
         });
         return response.choices![0].message.content as string;
     };
 
     return { query };
-};
+}

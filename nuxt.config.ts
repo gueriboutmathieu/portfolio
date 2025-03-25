@@ -6,11 +6,7 @@ export default defineNuxtConfig({
     devtools: { enabled: false },
     srcDir: "src/",
     modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt"],
-    css: [
-        "@/assets/css/tailwind.css",
-        "@/assets/css/fonts.css",
-        "@fortawesome/fontawesome-svg-core/styles.css",
-    ],
+    css: ["@/assets/css/tailwind.css", "@/assets/css/fonts.css", "@fortawesome/fontawesome-svg-core/styles.css"],
     tailwindcss: {
         exposeConfig: true,
         config: {

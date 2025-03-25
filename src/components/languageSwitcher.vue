@@ -1,11 +1,11 @@
 <template>
     <div class="h-full w-full">
-        <button 
-            class="h-full w-full bg-darkLight/50 shadow-2xl backdrop-blur-md text-xl font-bold rounded-md px-5 py-2.5 hover:bg-green hover:text-dark"
+        <button
+            class="h-full w-full bg-darkLight/50 shadow-2xl backdrop-blur-md text-lg font-bold rounded-md px-5 py-2.5 hover:bg-green hover:text-dark"
             @click="switchLanguage"
         >
             <FontAwesomeIcon class="pr-1" icon="fa-solid fa-globe" />
-            {{ language }}   
+            {{ language }}
         </button>
     </div>
 </template>

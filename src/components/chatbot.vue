@@ -1,10 +1,7 @@
 <template>
     <div class="h-full w-full flex flex-col items-end gap-5 text-lg">
         <div
-            class="
-                h-[calc(100vh*0.75)] w-[calc(100vw*0.3)] bg-darkLight/50 backdrop-blur-md rounded-md shadow-2xl p-5
-                flex flex-col justify-end
-            "
+            class="h-[calc(100vh*0.75)] w-[calc(100vw*0.3)] bg-darkLight/50 backdrop-blur-md rounded-md shadow-2xl p-5 flex flex-col justify-end"
             v-if="showChatbot"
         >
             <div class="w-full flex flex-col gap-5 overflow-auto">
@@ -28,8 +25,11 @@
                     class="h-10 bg-white text-dark flex flex-grow rounded-md border-none shadow-none outline-none p-2.5"
                     v-model="prompt"
                     @keyup.enter="queryChatbot"
+                />
+                <button
+                    @click="queryChatbot"
+                    class="h-full rounded-md px-2.5 text-yellow hover:text-dark hover:bg-yellow"
                 >
-                <button @click="queryChatbot" class="h-full rounded-md px-2.5 text-yellow hover:text-dark hover:bg-yellow">
                     <FontAwesomeIcon icon="fa-solid fa-paper-plane" size="xl" />
                 </button>
             </div>
