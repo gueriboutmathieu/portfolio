@@ -16,3 +16,6 @@ jobs:
     uses: gueriboutmathieu/typescript_utils/.github/workflows/callable__build_and_release.yaml@main
     needs: check-typescript-code
     secrets: inherit
+    with:
+      deploy-to-github-pages: true
+      custom-domain-name: "gueriboutmathieu.com"
