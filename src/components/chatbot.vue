@@ -6,7 +6,11 @@
         >
             <div class="w-full flex flex-col gap-5 overflow-auto">
                 <span class="font-bold text-center text-2xl">
-                    {{ language === Language.FR ? "Une question à propos de Mathieu ? Posez la !" : "You have a question about Mathieu ? Ask for it !" }}
+                    {{
+                        language === Language.FR
+                            ? "Une question à propos de Mathieu ? Posez la !"
+                            : "You have a question about Mathieu ? Ask for it !"
+                    }}
                 </span>
                 <div class="w-full flex flex-col items-end gap-1" v-if="userQuestion !== ''">
                     <span class="font-bold text-center">
