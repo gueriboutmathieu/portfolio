@@ -4,6 +4,9 @@ export default defineNuxtConfig({
     ssr: false,
     compatibilityDate: "2024-11-01",
     devtools: { enabled: false },
+    app: {
+        baseURL: "/",
+    },
     srcDir: "src/",
     modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt"],
     vite: {
