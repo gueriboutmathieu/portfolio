@@ -29,7 +29,7 @@ export const frSkills: Skill[] = [
         ],
     },
     {
-        name: "Développement front-end Typescript avec Nuxt.js, Angular, Primevue, Tailwind CSS",
+        name: "Développement front-end Typescript avec Nuxt.js, Angular, Tailwind CSS",
         images: [
             { tooltip: "Typescript", src: typescriptImage },
             { tooltip: "Nuxt.js", src: nuxtImage },
