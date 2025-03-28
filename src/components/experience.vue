@@ -1,6 +1,8 @@
 <template>
     <div class="h-full w-full flex items-center justify-center relative">
-        <span class="absolute top-7 text-3xl font-bold">{{ language === Language.FR ? "Expériences" : "Experiences" }}</span>
+        <span class="absolute top-7 text-3xl font-bold">
+            {{ language === Language.FR ? "Expériences" : "Experiences" }}
+        </span>
         <div class="flex flex-col items-start justify-center gap-5">
             <div
                 v-for="(experience, index) in experiences"
