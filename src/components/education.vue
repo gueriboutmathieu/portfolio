@@ -1,5 +1,6 @@
 <template>
-    <div class="h-full w-full flex items-center justify-center">
+    <div class="h-full w-full flex items-center justify-center relative">
+        <span class="absolute top-7 text-3xl font-bold">{{ language === Language.FR ? "Diplômes" : "Education" }}</span>
         <div class="flex flex-col items-center justify-center gap-5">
             <div
                 v-for="(education, index) in educations"
@@ -36,9 +37,11 @@
 
 <script setup lang="ts">
 import type { MainStore } from "@/stores/mainStore";
+import { Language } from "@/models/language";
 
 const mainStore = useNuxtApp().$mainStore as MainStore;
 const educations = computed(() => mainStore.state.educations);
+const language = computed(() => mainStore.state.language);
 
 function formatDates(startDate: Date, endDate: Date): string {
     const startYear = startDate.getFullYear().toString();

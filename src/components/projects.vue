@@ -1,5 +1,6 @@
 <template>
-    <div class="h-full w-full flex items-center justify-center">
+    <div class="h-full w-full flex items-center justify-center relative">
+        <span class="absolute top-7 text-3xl font-bold">{{ language === Language.FR ? "Projets" : "Projects" }}</span>
         <div class="flex flex-col items-center justify-center gap-5">
             <div
                 v-for="project in projects"
@@ -17,9 +18,11 @@
 
 <script setup lang="ts">
 import type { MainStore } from "@/stores/mainStore";
+import { Language } from "@/models/language";
 
 const mainStore = useNuxtApp().$mainStore as MainStore;
 const projects = computed(function () {
     return mainStore.state.projects;
 });
+const language = computed(() => mainStore.state.language);
 </script>

@@ -1,5 +1,6 @@
 <template>
-    <div class="h-full w-full flex items-center justify-center">
+    <div class="h-full w-full flex items-center justify-center relative">
+        <span class="absolute top-7 text-3xl font-bold">{{ language === Language.FR ? "Compétences" : "Skills" }}</span>
         <div class="flex flex-col items-start justify-start gap-5">
             <div v-for="skill in skills">
                 <span class="text-xl">{{ skill.name }}</span>
@@ -15,9 +16,11 @@
 
 <script setup lang="ts">
 import type { MainStore } from "@/stores/mainStore";
+import { Language } from "@/models/language";
 
 const mainStore = useNuxtApp().$mainStore as MainStore;
 const skills = computed(function () {
     return mainStore.state.skills;
 });
+const language = computed(() => mainStore.state.language);
 </script>

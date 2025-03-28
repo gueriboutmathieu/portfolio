@@ -1,5 +1,6 @@
 <template>
-    <div class="h-full w-full flex items-center justify-center">
+    <div class="h-full w-full flex items-center justify-center relative">
+        <span class="absolute top-7 text-3xl font-bold">{{ language === Language.FR ? "Expériences" : "Experiences" }}</span>
         <div class="flex flex-col items-start justify-center gap-5">
             <div
                 v-for="(experience, index) in experiences"
@@ -44,13 +45,12 @@ import { Language } from "@/models/language";
 
 const mainStore = useNuxtApp().$mainStore as MainStore;
 const experiences = computed(() => mainStore.state.experiences);
-const language = computed(function () {
-    return mainStore.state.language === Language.FR ? "fr-FR" : "en-US";
-});
+const language = computed(() => mainStore.state.language);
 
 function formatDates(startDate: Date, endDate: Date): string {
-    const start = startDate.toLocaleDateString(language.value, { month: "numeric", year: "numeric" });
-    const end = endDate.toLocaleDateString(language.value, { month: "numeric", year: "numeric" });
+    const locale = language.value === Language.FR ? "fr-FR" : "en-US";
+    const start = startDate.toLocaleDateString(locale, { month: "numeric", year: "numeric" });
+    const end = endDate.toLocaleDateString(locale, { month: "numeric", year: "numeric" });
     return `${start} - ${end}`;
 }
 </script>

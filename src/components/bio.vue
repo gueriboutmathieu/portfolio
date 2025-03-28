@@ -1,6 +1,7 @@
 <template>
-    <div class="h-full w-1/2 transform translate-x-1/2 flex items-center justify-center text-3xl">
-        <div class="text-white">
+    <div class="h-full w-full flex items-center justify-center relative">
+        <span class="absolute top-7 text-3xl font-bold">Bio</span>
+        <div class="w-1/2 text-white text-3xl">
             <p v-html="bio" />
         </div>
     </div>
