@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt", "@nuxtjs/plausible"],
     plausible: {
         domain: "gueriboutmathieu.com",
+        apiHost: "analytics.gueriboutmathieu.com"
     },
     vite: {
         plugins: [require("vite-svg-loader")()],
