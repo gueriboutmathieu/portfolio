@@ -1,16 +1,18 @@
 <template>
-    <div class="h-full w-full flex flex-col items-end gap-5 text-lg">
+    <div class="h-full w-full flex flex-col items-end">
         <div
-            class="h-[calc(100vh*0.75)] w-[calc(100vw*0.3)] bg-darkLight/50 backdrop-blur-md rounded-md shadow-2xl p-5 flex flex-col justify-end"
+            class="h-[calc(100vh*0.75)] w-[calc(100vw*0.3)] bg-darkLight/50 backdrop-blur-md rounded-md shadow-2xl p-5 flex flex-col justify-end mr-2.5 mb-2.5"
             v-if="showChatbot"
         >
             <div class="w-full flex flex-col gap-5 overflow-auto">
                 <span class="font-bold text-center text-2xl">
                     {{
                         language === Language.FR
-                            ? "Une question à propos de Mathieu ? Posez la !"
-                            : "You have a question about Mathieu ? Ask for it !"
+                            ? "Une question à propos de Mathieu ? "
+                            : "You have a question about Mathieu ? "
                     }}
+                    <br />
+                    {{ language === Language.FR ? "Posez-la !" : "Ask for it !" }}
                 </span>
                 <div class="w-full flex flex-col items-end gap-1" v-if="userQuestion !== ''">
                     <span class="font-bold text-center">
@@ -38,16 +40,32 @@
                 </button>
             </div>
         </div>
-        <button
-            id="chatbotButton"
+        <div 
             :class="
-                'bg-darkLight/50 shadow-2xl backdrop-blur-md text-xl font-bold rounded-md p-2.5 hover:bg-green hover:text-dark' +
-                (showChatbot ? ' bg-green text-dark' : '')
+                'flex flex-row items-center  rounded-md p-2.5 ' + 
+                (showChatbot ? 'bg-transparent' : 'bg-darkLight/50 shadow-2xl backdrop-blur-md')
             "
-            @click="toggleChatbotView"
         >
-            <FontAwesomeIcon icon="fa-solid fa-robot" size="2x" />
-        </button>
+            <div v-if="!showChatbot" class="px-2.5">
+                <span>
+                    {{
+                        language === Language.FR
+                            ? "Une question à propos de Mathieu ? Posez-la !"
+                            : "You have a question about Mathieu ? Ask for it !"
+                    }}
+                </span>
+            </div>
+            <button
+                id="chatbotButton"
+                :class="
+                    'rounded-md p-2.5 hover:bg-green hover:text-dark' +
+                    (showChatbot ? ' bg-green text-dark' : '')
+                "
+                @click="toggleChatbotView"
+            >
+                <FontAwesomeIcon icon="fa-solid fa-robot" size="2x" />
+            </button>
+        </div>
     </div>
 </template>
 

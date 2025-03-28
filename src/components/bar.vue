@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full w-full bg-darkLight/50 shadow-2xl backdrop-blur-md rounded-xl inline-block p-2.5">
+    <div class="h-full w-full bg-darkLight/50 shadow-2xl backdrop-blur-md rounded-md inline-block p-2.5">
         <div class="flex flex-row gap-2.5">
             <NavigationButton
                 :title="titles.home"
