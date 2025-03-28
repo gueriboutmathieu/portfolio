@@ -5,7 +5,7 @@
                 <span class="text-xl">{{ skill.name }}</span>
                 <div class="flex flex-row justify-start pt-2.5 gap-5">
                     <button v-for="image in skill.images" class="bg-darkLight rounded-md p-2.5 hover:bg-white">
-                        <img :src="malt" class="w-10 h-auto" />
+                        <img :src="image.src" class="w-[4em] h-[4em]" />
                     </button>
                 </div>
             </div>
@@ -15,7 +15,6 @@
 
 <script setup lang="ts">
 import type { MainStore } from "@/stores/mainStore";
-import malt from "../assets/icons/malt.svg";
 
 const mainStore = useNuxtApp().$mainStore as MainStore;
 const skills = computed(function () {
