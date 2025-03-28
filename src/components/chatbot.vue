@@ -40,9 +40,9 @@
                 </button>
             </div>
         </div>
-        <div 
+        <div
             :class="
-                'flex flex-row items-center  rounded-md p-2.5 ' + 
+                'flex flex-row items-center  rounded-md p-2.5 ' +
                 (showChatbot ? 'bg-transparent' : 'bg-darkLight/50 shadow-2xl backdrop-blur-md')
             "
         >
@@ -57,10 +57,7 @@
             </div>
             <button
                 id="chatbotButton"
-                :class="
-                    'rounded-md p-2.5 hover:bg-green hover:text-dark' +
-                    (showChatbot ? ' bg-green text-dark' : '')
-                "
+                :class="'rounded-md p-2.5 hover:bg-green hover:text-dark' + (showChatbot ? ' bg-green text-dark' : '')"
                 @click="toggleChatbotView"
             >
                 <FontAwesomeIcon icon="fa-solid fa-robot" size="2x" />
