@@ -8,7 +8,10 @@ export default defineNuxtConfig({
         baseURL: "/",
     },
     srcDir: "src/",
-    modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt"],
+    modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt", "@nuxtjs/plausible"],
+    plausible: {
+        domain: "gueriboutmathieu.com",
+    },
     vite: {
         plugins: [require("vite-svg-loader")()],
     },
