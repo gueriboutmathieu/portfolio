@@ -74,6 +74,8 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({ path: "/", middleware: "mobile" });
+
 const isScrolling = ref<boolean>(false);
 const currentYPosition = ref<number>(0);
 
