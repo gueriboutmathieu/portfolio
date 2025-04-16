@@ -1,13 +1,17 @@
 <template>
     <div class="h-full w-full flex items-center justify-start relative">
-        <span class="absolute right-0 left-0 text-center top-7 text-3xl font-bold">{{ language === Language.FR ? "Projets" : "Projects" }}</span>
+        <span class="absolute right-0 left-0 text-center top-7 text-3xl font-bold">
+            {{ language === Language.FR ? "Projets" : "Projects" }}
+        </span>
 
         <div
             v-for="project in projects"
             class="max-h-full min-w-full flex items-center px-24 py-32 transition-transform duration-500 ease-in-out"
             :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
         >
-            <div class="h-fit w-full flex flex-col items-start justify-start gap-5 bg-darkLight rounded-md shadow-xl p-5">
+            <div
+                class="h-fit w-full flex flex-col items-start justify-start gap-5 bg-darkLight rounded-md shadow-xl p-5"
+            >
                 <img :src="project.image" class="rounded-md" />
                 <div class="flex flex-row items-start justify-center gap-5">
                     <span class="text-3xl font-bold">{{ project.title }}</span>
@@ -17,7 +21,7 @@
                 </div>
                 <p class="text-lg" v-html="project.description.replace(/\n/g, '<br />')" />
             </div>
-        </div>      
+        </div>
 
         <FontAwesomeIcon
             icon="fa-solid fa-arrow-left"

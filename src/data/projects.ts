@@ -47,7 +47,7 @@ export const frProjects: Project[] = [
             { name: "Nuxt.js", icon: "" },
             { name: "TailwindCSS", icon: tailwindImage },
         ],
-    }
+    },
 ];
 
 export const enProjects: Project[] = [
