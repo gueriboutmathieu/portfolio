@@ -22,7 +22,10 @@
                 </div>
                 <div class="w-full flex flex-col items-start gap-1" v-if="chatbotResponse !== null">
                     <span class="font-bold">Chatbot</span>
-                    <ContentRenderer class="prose bg-purple rounded-md px-2.5 py-1 text-dark" :value="chatbotResponse" />
+                    <ContentRenderer
+                        class="prose bg-purple rounded-md px-2.5 py-1 text-dark"
+                        :value="chatbotResponse"
+                    />
                 </div>
             </div>
             <div class="w-full flex flex-row gap-5 mt-5 items-center">
