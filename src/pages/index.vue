@@ -53,8 +53,6 @@
             class="section h-full w-full"
             @wheel="(e) => scrollTo(e, 'contact', 'education')"
             @touchmove="(e) => touchTo(e, 'contact', 'education')"
-            @keyup.up="console.log('up')"
-            @keyup.down="console.log('down')"
         >
             <Contact />
         </section>
@@ -78,6 +76,7 @@ definePageMeta({ path: "/", middleware: "mobile" });
 
 const isScrolling = ref<boolean>(false);
 const currentYPosition = ref<number>(0);
+const currentSection = ref<string>("home");
 
 function touchTo(event: TouchEvent, nextSection: string, previousSection: string) {
     const newYPosition = event.touches[0].clientY;
@@ -99,6 +98,7 @@ function scrollTo(event: WheelEvent, nextSection: string, previousSection: strin
     if (delta < 0 && previousSection !== undefined) {
         section = previousSection;
     }
+    currentSection.value = section;
     navigateTo(section);
 
     setTimeout(() => {
@@ -109,5 +109,24 @@ function scrollTo(event: WheelEvent, nextSection: string, previousSection: strin
 function navigateTo(section: string) {
     const targetSection = document.getElementById(section);
     targetSection!.scrollIntoView({ behavior: "smooth" });
+}
+
+onMounted(() => window.addEventListener("keydown", handleKey));
+
+onBeforeUnmount(() => window.removeEventListener("keydown", handleKey));
+
+function handleKey(event: KeyboardEvent) {
+    const sections = ["home", "bio", "skills", "projects", "experience", "education", "contact"];
+    const currentIndex = sections.indexOf(currentSection.value);
+
+    if (event.key === "ArrowDown") {
+        if (currentIndex === sections.length - 1) return;
+        currentSection.value = sections[currentIndex + 1];
+        navigateTo(sections[currentIndex + 1]);
+    } else if (event.key === "ArrowUp") {
+        if (currentIndex === 0) return;
+        currentSection.value = sections[currentIndex - 1];
+        navigateTo(sections[currentIndex - 1]);
+    }
 }
 </script>

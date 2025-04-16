@@ -6,13 +6,13 @@
 
         <div
             v-for="project in projects"
-            class="max-h-full min-w-full flex items-center px-24 py-32 transition-transform duration-500 ease-in-out"
+            class="h-full min-w-full flex items-center justify-center px-24 py-32 transition-transform duration-500 ease-in-out"
             :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
         >
             <div
-                class="h-fit w-full flex flex-col items-start justify-start gap-5 bg-darkLight rounded-md shadow-xl p-5"
+                class="max-h-[90vh] max-w-screen-2xl flex flex-col items-start justify-start gap-5 bg-darkLight rounded-md shadow-xl p-5"
             >
-                <img :src="project.image" class="rounded-md" />
+                <img :src="project.image" class="rounded-md object-contain" />
                 <div class="flex flex-row items-start justify-center gap-5">
                     <span class="text-3xl font-bold">{{ project.title }}</span>
                     <a :href="project.github" target="_blank" class="flex self-center">
@@ -36,6 +36,15 @@
             class="absolute right-5 rounded-full p-2.5 aspect-square text-white cursor-pointer hover:bg-lightBlue hover:text-dark"
             @click="showNextProject"
         />
+
+        <div class="absolute top-28 left-0 right-0 items-center justify-center flex flex-row gap-2.5">
+            <div
+                v-for="(_, index) in projects"
+                class="bg-darkLight rounded-full aspect-square w-5 cursor-pointer"
+                :class="{ 'bg-lightBlue': index === currentIndex }"
+                @click="showProject(index)"
+            ></div>
+        </div>
     </div>
 </template>
 
@@ -50,6 +59,10 @@ const projects = computed(function () {
 const currentIndex = ref<number>(0);
 const language = computed(() => mainStore.state.language);
 
+function showProject(index: number) {
+    currentIndex.value = index;
+}
+
 function showNextProject() {
     if (currentIndex.value === projects.value.length - 1) {
         currentIndex.value = 0;
@@ -63,6 +76,18 @@ function showPreviousProject() {
         currentIndex.value = projects.value.length - 1;
     } else {
         currentIndex.value--;
+    }
+}
+
+onMounted(() => window.addEventListener("keydown", handleKey));
+
+onBeforeUnmount(() => window.removeEventListener("keydown", handleKey));
+
+function handleKey(event: KeyboardEvent) {
+    if (event.key === "ArrowRight") {
+        showNextProject();
+    } else if (event.key === "ArrowLeft") {
+        showPreviousProject();
     }
 }
 </script>
