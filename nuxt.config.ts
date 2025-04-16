@@ -8,7 +8,7 @@ export default defineNuxtConfig({
         baseURL: "/",
     },
     srcDir: "src/",
-    modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt", "@nuxtjs/plausible", "@nuxtjs/device"],
+    modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt", "@nuxtjs/plausible", "@nuxtjs/device", "@nuxt/content"],
     plausible: {
         domain: "gueriboutmathieu.com",
         apiHost: "https://analytics.gueriboutmathieu.com",

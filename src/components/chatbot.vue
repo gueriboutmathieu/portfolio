@@ -20,9 +20,9 @@
                     </span>
                     <p class="px-2.5 py-1 bg-green rounded-md text-dark">{{ userQuestion }}</p>
                 </div>
-                <div class="w-full flex flex-col items-start gap-1" v-if="chatbotResponse !== ''">
+                <div class="w-full flex flex-col items-start gap-1" v-if="chatbotResponse !== null">
                     <span class="font-bold">Chatbot</span>
-                    <p class="bg-purple rounded-md px-2.5 py-1 text-dark">{{ chatbotResponse }}</p>
+                    <ContentRenderer class="prose bg-purple rounded-md px-2.5 py-1 text-dark" :value="chatbotResponse" />
                 </div>
             </div>
             <div class="w-full flex flex-row gap-5 mt-5 items-center">
@@ -77,17 +77,18 @@ const language = computed(() => mainStore.state.language);
 const showChatbot = ref<boolean>(false);
 const prompt = ref<string>("");
 const userQuestion = ref<string>("");
-const chatbotResponse = ref<string>("");
+const chatbotResponse = ref<any>(null);
 
 function toggleChatbotView() {
     showChatbot.value = !showChatbot.value;
 }
 
 async function queryChatbot() {
-    chatbotResponse.value = "";
+    chatbotResponse.value = null;
     const userPrompt = prompt.value;
     userQuestion.value = prompt.value;
     prompt.value = "";
-    chatbotResponse.value = await chatbotService.query(userPrompt);
+    const rawResponse = await chatbotService.query(userPrompt);
+    chatbotResponse.value = await parseMarkdown(rawResponse);
 }
 </script>
