@@ -14,9 +14,15 @@
         >
             <div
                 class="max-h-[90vh] max-w-screen-2xl flex flex-col items-start justify-start max-[640px]:gap-1 min-[640px]:gap-5 bg-darkLight rounded-md shadow-xl max-[350px]:p-2.5 min-[350px]:p-5"
-                :class="isHidpi ? 'max-w-screen-md' : ''"
+                :class="isHidpi ? 'max-w-screen-sm' : ''"
             >
-                <img :src="project.image" class="rounded-md object-contain" />
+                <button
+                    class="relative group flex items-center justify-center"
+                    @click="toggleImageModal"
+                >
+                    <img :src="project.image" class="rounded-md object-contain group-hover:brightness-50" />
+                    <Icon name="ic:round-remove-red-eye" class="text-3xl absolute opacity-0 group-hover:opacity-100" />
+                </button>
                 <div class="flex flex-row items-start justify-center max-[640px]:gap-2.5 min-[640px]:gap-5">
                     <span class="font-bold max-[640px]:text-2xl min-[640px]:text-3xl">
                         {{ project.title }}
@@ -32,6 +38,32 @@
                     class="max-[350px]:text-xs max-[640px]:text-md min-[640px]:text-xl"
                     v-html="project.description.replace(/\n/g, '<br />')"
                 />
+            </div>
+        </div>
+
+        <div
+            v-show="showImageModal"
+            class="absolute bottom-0 top-0 left-0 right-0 z-20 h-full w-full backdrop-blur-xl p-5"
+            @wheel.stop
+            @touchmove.stop
+        >
+            <div class="h-full w-full flex flex-col gap-5 items-end justify-start">
+                <button
+                    class="
+                        aspect-square rounded-md bg-dark text-red
+                        max-[350px]:text-3xl min-[350px]:text-4xl hover:bg-red hover:text-dark active:bg-red active:text-dark
+                    "
+                    @click="toggleImageModal"
+                >
+                    <Icon name="ic:round-close" />
+                </button>
+
+                <div class="h-full w-full flex items-center justify-center modal">
+                    <img
+                        :src="projects[currentIndex].image"
+                        class="max-h-[90vh] max-w-full rounded-md shadow-2xl"
+                    />
+                </div>
             </div>
         </div>
 
@@ -78,6 +110,12 @@ const projects = computed(function () {
 const currentIndex = ref<number>(0);
 const language = computed(() => mainStore.state.language);
 
+const showImageModal = ref<boolean>(false);
+
+function toggleImageModal() {
+    showImageModal.value = !showImageModal.value;
+}
+
 function showProject(index: number) {
     currentIndex.value = index;
 }
@@ -110,3 +148,18 @@ function handleKey(event: KeyboardEvent) {
     }
 }
 </script>
+
+<style scoped>
+.modal {
+    animation: grow 0.5s;
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+</style>

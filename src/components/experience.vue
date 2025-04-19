@@ -119,55 +119,57 @@
 
         <div
             v-show="showExperienceModal"
-            class="absolute bottom-0 top-0 left-0 right-0 z-20 h-full w-full bg-darkLight modal flex flex-col gap-2.5 p-5 overflow-y-auto"
+            class="absolute bottom-0 top-0 left-0 right-0 z-20 h-full w-full backdrop-blur-md p-5"
             @wheel.stop
             @touchmove.stop
         >
-            <div class="flex flex-row items-start justify-between gap-5">
-                <span class="max-[350px]:text-xl min-[350px]:text-2xl font-bold text-balance">
-                    {{ currentExperience.title }}
-                </span>
-                <button
-                    class="aspect-square rounded-md bg-dark text-red max-[350px]:text-3xl min-[350px]:text-4xl active:bg-red active:text-dark"
-                    @click="toggleExperienceModal"
-                >
-                    <Icon name="ic:round-close" />
-                </button>
-            </div>
-
-            <div class="flex flex-row items-center gap-2.5">
-                <Icon class="max-[350px]:text-xl min-[640px]:text-2xl aspect-square" name="ic:round-factory" />
-                <span class="max-[350px]:text-md min-[640px]:text-lg">
-                    {{ currentExperience.company }}
-                </span>
-            </div>
-            <div class="flex flex-row items-center gap-2.5">
-                <Icon class="max-[350px]:text-xl min-[640px]:text-2xl aspect-square" name="ic:round-location-on" />
-                <span class="max-[350px]:text-md min-[640px]:text-lg">
-                    {{ currentExperience.location }}
-                </span>
-            </div>
-            <div class="flex flex-row items-center gap-2.5">
-                <Icon class="max-[350px]:text-xl min-[640px]:text-2xl aspect-square" name="ic:round-hourglass-empty" />
-                <span class="max-[350px]:text-md min-[640px]:text-lg text-wrap">
-                    {{ formatDates(currentExperience.startDate, currentExperience.endDate) }}
-                </span>
-            </div>
-            <div class="flex flex-row items-center gap-2.5">
-                <Icon class="max-[350px]:text-xl min-[640px]:text-2xl aspect-square" name="ic:round-info" />
-                <span class="max-[350px]:text-md min-[640px]:text-lg">
-                    {{ currentExperience.companyDescription }}
-                </span>
-            </div>
-            <div class="flex flex-row items-start gap-2.5">
-                <Icon class="max-[350px]:text-xl min-[640px]:text-2xl aspect-square" name="ic:round-checklist" />
-                <div class="flex flex-col">
-                    <div
-                        v-for="mission in currentExperience.missions"
-                        class="flex flex-row gap-1 max-[350px]:text-md min-[640px]:text-lg"
+            <div class="h-full w-full flex flex-col gap-2.5 p-5 overflow-y-auto bg-darkLight shadow-2xl rounded-md modal">
+                <div class="flex flex-row items-start justify-between gap-5 ">
+                    <span class="max-[350px]:text-xl min-[350px]:text-2xl font-bold text-balance">
+                        {{ currentExperience.title }}
+                    </span>
+                    <button
+                        class="aspect-square rounded-md bg-dark text-red max-[350px]:text-3xl min-[350px]:text-4xl active:bg-red active:text-dark"
+                        @click="toggleExperienceModal"
                     >
-                        <span>·</span>
-                        <span>{{ mission }}</span>
+                        <Icon name="ic:round-close" />
+                    </button>
+                </div>
+
+                <div class="flex flex-row items-center gap-2.5">
+                    <Icon class="max-[350px]:text-xl min-[640px]:text-2xl aspect-square" name="ic:round-factory" />
+                    <span class="max-[350px]:text-md min-[640px]:text-lg">
+                        {{ currentExperience.company }}
+                    </span>
+                </div>
+                <div class="flex flex-row items-center gap-2.5">
+                    <Icon class="max-[350px]:text-xl min-[640px]:text-2xl aspect-square" name="ic:round-location-on" />
+                    <span class="max-[350px]:text-md min-[640px]:text-lg">
+                        {{ currentExperience.location }}
+                    </span>
+                </div>
+                <div class="flex flex-row items-center gap-2.5">
+                    <Icon class="max-[350px]:text-xl min-[640px]:text-2xl aspect-square" name="ic:round-hourglass-empty" />
+                    <span class="max-[350px]:text-md min-[640px]:text-lg text-wrap">
+                        {{ formatDates(currentExperience.startDate, currentExperience.endDate) }}
+                    </span>
+                </div>
+                <div class="flex flex-row items-center gap-2.5">
+                    <Icon class="max-[350px]:text-xl min-[640px]:text-2xl aspect-square" name="ic:round-info" />
+                    <span class="max-[350px]:text-md min-[640px]:text-lg">
+                        {{ currentExperience.companyDescription }}
+                    </span>
+                </div>
+                <div class="flex flex-row items-start gap-2.5">
+                    <Icon class="max-[350px]:text-xl min-[640px]:text-2xl aspect-square" name="ic:round-checklist" />
+                    <div class="flex flex-col">
+                        <div
+                            v-for="mission in currentExperience.missions"
+                            class="flex flex-row gap-1 max-[350px]:text-md min-[640px]:text-lg"
+                        >
+                            <span>·</span>
+                            <span>{{ mission }}</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -271,12 +273,10 @@ function handleKey(event: KeyboardEvent) {
 
 @keyframes grow {
     from {
-        transform: scale(0.5);
-        border-radius: 6px;
+        transform: scale(0);
     }
     to {
         transform: scale(1);
-        border-radius: 0px;
     }
 }
 </style>
