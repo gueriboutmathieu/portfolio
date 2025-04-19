@@ -123,8 +123,10 @@
             @wheel.stop
             @touchmove.stop
         >
-            <div class="h-full w-full flex flex-col gap-2.5 p-5 overflow-y-auto bg-darkLight shadow-2xl rounded-md modal">
-                <div class="flex flex-row items-start justify-between gap-5 ">
+            <div
+                class="h-full w-full flex flex-col gap-2.5 p-5 overflow-y-auto bg-darkLight shadow-2xl rounded-md modal"
+            >
+                <div class="flex flex-row items-start justify-between gap-5">
                     <span class="max-[350px]:text-xl min-[350px]:text-2xl font-bold text-balance">
                         {{ currentExperience.title }}
                     </span>
@@ -149,7 +151,10 @@
                     </span>
                 </div>
                 <div class="flex flex-row items-center gap-2.5">
-                    <Icon class="max-[350px]:text-xl min-[640px]:text-2xl aspect-square" name="ic:round-hourglass-empty" />
+                    <Icon
+                        class="max-[350px]:text-xl min-[640px]:text-2xl aspect-square"
+                        name="ic:round-hourglass-empty"
+                    />
                     <span class="max-[350px]:text-md min-[640px]:text-lg text-wrap">
                         {{ formatDates(currentExperience.startDate, currentExperience.endDate) }}
                     </span>

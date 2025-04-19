@@ -16,10 +16,7 @@
                 class="max-h-[90vh] max-w-screen-2xl flex flex-col items-start justify-start max-[640px]:gap-1 min-[640px]:gap-5 bg-darkLight rounded-md shadow-xl max-[350px]:p-2.5 min-[350px]:p-5"
                 :class="isHidpi ? 'max-w-screen-sm' : ''"
             >
-                <button
-                    class="relative group flex items-center justify-center"
-                    @click="toggleImageModal"
-                >
+                <button class="relative group flex items-center justify-center" @click="toggleImageModal">
                     <img :src="project.image" class="rounded-md object-contain group-hover:brightness-50" />
                     <Icon name="ic:round-remove-red-eye" class="text-3xl absolute opacity-0 group-hover:opacity-100" />
                 </button>
@@ -49,20 +46,14 @@
         >
             <div class="h-full w-full flex flex-col gap-5 items-end justify-start">
                 <button
-                    class="
-                        aspect-square rounded-md bg-dark text-red
-                        max-[350px]:text-3xl min-[350px]:text-4xl hover:bg-red hover:text-dark active:bg-red active:text-dark
-                    "
+                    class="aspect-square rounded-md bg-dark text-red max-[350px]:text-3xl min-[350px]:text-4xl hover:bg-red hover:text-dark active:bg-red active:text-dark"
                     @click="toggleImageModal"
                 >
                     <Icon name="ic:round-close" />
                 </button>
 
                 <div class="h-full w-full flex items-center justify-center modal">
-                    <img
-                        :src="projects[currentIndex].image"
-                        class="max-h-[90vh] max-w-full rounded-md shadow-2xl"
-                    />
+                    <img :src="projects[currentIndex].image" class="max-h-[90vh] max-w-full rounded-md shadow-2xl" />
                 </div>
             </div>
         </div>
