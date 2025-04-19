@@ -1,10 +1,7 @@
 <template>
     <div class="h-full w-full flex items-center justify-center relative">
         <span
-            class="
-                absolute left-0 right-0 text-center max-[350px]:top-[70px] max-[640px]:top-24 min-[640px]:top-7
-                max-[350px]:text-2xl min-[350px]:text-3xl font-bold
-            "
+            class="absolute left-0 right-0 text-center max-[350px]:top-[70px] max-[640px]:top-24 min-[640px]:top-7 max-[350px]:text-2xl min-[350px]:text-3xl font-bold"
         >
             {{ language === Language.FR ? "Diplômes" : "Education" }}
         </span>
@@ -12,19 +9,11 @@
         <div class="h-full w-full flex justify-start">
             <div
                 v-for="education in educations"
-                class="
-                    h-full min-w-full flex items-center justify-center
-                    max-[640px]:px-5 min-[640px]:px-28
-                    transition-transform duration-500 ease-in-out
-                "
+                class="h-full min-w-full flex items-center justify-center max-[640px]:px-5 min-[640px]:px-28 transition-transform duration-500 ease-in-out"
                 :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
             >
                 <div
-                    class="
-                        max-h-[90vh] max-w-screen-2xl flex flex-col items-start justify-start
-                        max-[640px]:gap-1 min-[640px]:gap-5
-                        bg-darkLight rounded-md shadow-xl max-[350px]:p-2.5 min-[350px]:p-5
-                    "
+                    class="max-h-[90vh] max-w-screen-2xl flex flex-col items-start justify-start max-[640px]:gap-1 min-[640px]:gap-5 bg-darkLight rounded-md shadow-xl max-[350px]:p-2.5 min-[350px]:p-5"
                 >
                     <span class="max-[350px]:text-lg max-[640px]:text-xl min-[640px]:text-2xl font-bold">
                         {{ education.title }}
@@ -81,25 +70,14 @@
         </div>
 
         <button
-            class="
-                absolute max-[350px]:bottom-[70px] max-[640px]:bottom-28 max-[640px]:left-5 min-[640px]:left-5 z-10
-                rounded-full p-1 aspect-square cursor-pointer flex items-center justify-center
-                hover:bg-red hover:text-dark active:bg-red active:text-dark
-            "
+            class="absolute max-[350px]:bottom-[70px] max-[640px]:bottom-28 max-[640px]:left-5 min-[640px]:left-5 z-10 rounded-full p-1 aspect-square cursor-pointer flex items-center justify-center hover:bg-red hover:text-dark active:bg-red active:text-dark"
             @click="goToPreviousEducation"
         >
-            <Icon
-                name="ic:round-arrow-back"
-                class="max-[350px]:text-2xl max-[640px]:text-3xl min-[640px]:text-5xl"
-            />
+            <Icon name="ic:round-arrow-back" class="max-[350px]:text-2xl max-[640px]:text-3xl min-[640px]:text-5xl" />
         </button>
 
         <button
-            class="
-                absolute max-[350px]:bottom-[70px] max-[640px]:bottom-28 max-[640px]:right-5 min-[640px]:right-5 z-10
-                rounded-full p-1 aspect-square cursor-pointer flex items-center justify-center
-                hover:bg-red hover:text-dark active:bg-red active:text-dark
-            "
+            class="absolute max-[350px]:bottom-[70px] max-[640px]:bottom-28 max-[640px]:right-5 min-[640px]:right-5 z-10 rounded-full p-1 aspect-square cursor-pointer flex items-center justify-center hover:bg-red hover:text-dark active:bg-red active:text-dark"
             @click="goToNextEducation"
         >
             <Icon
@@ -109,10 +87,7 @@
         </button>
 
         <div
-            class="
-                absolute left-0 right-0 max-[350px]:bottom-[70px] max-[640px]:bottom-28 min-[640px]:top-24 pb-2.5
-                flex flex-row self-center items-center justify-center gap-2.5 z-0
-            "
+            class="absolute left-0 right-0 max-[350px]:bottom-[70px] max-[640px]:bottom-28 min-[640px]:top-24 pb-2.5 flex flex-row self-center items-center justify-center gap-2.5 z-0"
         >
             <div
                 v-for="(_, index) in educations"

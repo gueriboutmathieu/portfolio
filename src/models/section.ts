@@ -3,4 +3,4 @@ export type Section = {
     icon: string;
     iconColor: string;
     path: string;
-}
+};

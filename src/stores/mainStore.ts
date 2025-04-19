@@ -18,7 +18,7 @@ import { frSystemPrompt, enSystemPrompt } from "@/data/systemPrompt";
 export const createMainStore = defineStore("mainStore", () => {
     const _state = reactive<{
         language: Language;
-        sections: Section[]
+        sections: Section[];
         bio: string;
         educations: Education[];
         experiences: Experience[];

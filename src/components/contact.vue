@@ -1,10 +1,7 @@
 <template>
     <div class="h-full w-full flex items-center justify-center relative">
         <span
-            class="
-                absolute left-0 right-0 text-center max-[350px]:top-[70px] max-[640px]:top-24 min-[640px]:top-7
-                max-[350px]:text-2xl min-[350px]:text-3xl font-bold
-            "
+            class="absolute left-0 right-0 text-center max-[350px]:top-[70px] max-[640px]:top-24 min-[640px]:top-7 max-[350px]:text-2xl min-[350px]:text-3xl font-bold"
         >
             Contact
         </span>
@@ -19,26 +16,17 @@
                 <Icon
                     v-if="contactLink.iconType === 'nuxtIcon'"
                     :name="contactLink.icon"
-                    class="
-                        max-[350px]:text-5xl max-[640px]:text-7xl min-[640px]:text-9xl
-                    "
+                    class="max-[350px]:text-5xl max-[640px]:text-7xl min-[640px]:text-9xl"
                     :class="contactLink.iconExtraClasses"
                 />
-                <component 
+                <component
                     v-else
                     :is="contactLink.icon"
-                    class="
-                        h-full w-full aspect-square max-[350px]:w-[3rem] max-[640px]:w-[4.5rem] min-[640px]:w-[8rem] 
-                        fill-white 
-                    "
+                    class="h-full w-full aspect-square max-[350px]:w-[3rem] max-[640px]:w-[4.5rem] min-[640px]:w-[8rem] fill-white"
                     :class="contactLink.iconExtraClasses"
                 />
                 <span
-                    class="
-                        absolute -top-10 max-[350px]:text-xl max-[640px]:text-2xl min-[640px]:text-3xl font-bold text-nowrap
-                        opacity-0 group-hover:opacity-100 group-active:opacity-100
-                        scale-0 group-hover:scale-100 group-active:scale-100
-                    "
+                    class="absolute -top-10 max-[350px]:text-xl max-[640px]:text-2xl min-[640px]:text-3xl font-bold text-nowrap opacity-0 group-hover:opacity-100 group-active:opacity-100 scale-0 group-hover:scale-100 group-active:scale-100"
                     :class="'text-' + contactLink.iconColor"
                 >
                     {{ contactLink.tooltip }}

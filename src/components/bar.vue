@@ -5,7 +5,11 @@
         <button
             v-for="section in sections"
             class="flex items-center justify-center"
-            :class="!isMobileOrTablet ? 'transition delay-0 duration-150 ease-in-out hover:scale-150 hover:-translate-y-1 active:opacity-50' : ''"
+            :class="
+                !isMobileOrTablet
+                    ? 'transition delay-0 duration-150 ease-in-out hover:scale-150 hover:-translate-y-1 active:opacity-50'
+                    : ''
+            "
             @click="navigateTo(section.path)"
             @mouseover="mouseOver(section.title, section.iconColor)"
             @mouseleave="mouseLeave(section.title)"
@@ -45,28 +49,28 @@ function navigateTo(path: string) {
 }
 
 function mouseOver(buttonId: string, iconColor: string) {
-    const tooltip = document.getElementById('tooltip-' + buttonId);
+    const tooltip = document.getElementById("tooltip-" + buttonId);
     tooltip!.hidden = false;
     const title = document.getElementById("icon-" + buttonId);
     title!.style.color = iconColor;
 }
 
 function mouseLeave(buttonId: string) {
-    const tooltip = document.getElementById('tooltip-' + buttonId);
+    const tooltip = document.getElementById("tooltip-" + buttonId);
     tooltip!.hidden = true;
     const title = document.getElementById("icon-" + buttonId);
     title!.style.color = colors.white;
 }
 
 function touchStart(buttonId: string, iconColor: string) {
-    const tooltip = document.getElementById('tooltip-' + buttonId);
+    const tooltip = document.getElementById("tooltip-" + buttonId);
     tooltip!.hidden = false;
     const title = document.getElementById("icon-" + buttonId);
     title!.style.color = iconColor;
 }
 
 function touchEnd(buttonId: string) {
-    const tooltip = document.getElementById('tooltip-' + buttonId);
+    const tooltip = document.getElementById("tooltip-" + buttonId);
     tooltip!.hidden = true;
     const title = document.getElementById("icon-" + buttonId);
     title!.style.color = colors.white;
