@@ -1,9 +1,9 @@
-export type ImageSkill = {
-    tooltip: string;
-    src: string;
+export type SkillTechnology = {
+    name: string;
+    icon: string;
 };
 
 export type Skill = {
     name: string;
-    images: ImageSkill[];
+    technologies: SkillTechnology[];
 };

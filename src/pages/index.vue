@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full w-full bg-dark">
+    <div class="h-full w-full bg-dark z-0">
         <section
             id="home"
             class="section h-full w-full"
@@ -57,8 +57,10 @@
             <Contact />
         </section>
     </div>
-    <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2">
-        <Bar @onNavigateTo="navigateTo" />
+    <div class="absolute bottom-5 left-5 right-5 flex items-center justify-center">
+        <div>
+            <Bar @onNavigateTo="navigateTo" />
+        </div>
     </div>
     <div class="absolute top-5 left-5">
         <DownloadResumeButton />
@@ -66,17 +68,18 @@
     <div class="absolute top-5 right-5">
         <LanguageSwitcher />
     </div>
-    <div class="absolute bottom-5 right-5">
+    <!-- <div class="absolute bottom-5 right-5">
         <Chatbot />
-    </div>
+    </div> -->
 </template>
 
 <script setup lang="ts">
-definePageMeta({ path: "/", middleware: "mobile" });
+definePageMeta({ path: "/" });
 
 const isScrolling = ref<boolean>(false);
 const currentYPosition = ref<number>(0);
 const currentSection = ref<string>("home");
+const sections = ["home", "bio", "skills", "projects", "experience", "education", "contact"];
 
 function touchTo(event: TouchEvent, nextSection: string, previousSection: string) {
     const newYPosition = event.touches[0].clientY;
@@ -116,7 +119,6 @@ onMounted(() => window.addEventListener("keydown", handleKey));
 onBeforeUnmount(() => window.removeEventListener("keydown", handleKey));
 
 function handleKey(event: KeyboardEvent) {
-    const sections = ["home", "bio", "skills", "projects", "experience", "education", "contact"];
     const currentIndex = sections.indexOf(currentSection.value);
 
     if (event.key === "ArrowDown") {

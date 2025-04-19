@@ -1,6 +1,4 @@
 import type { Project } from "@/models/project";
-import nuxtImage from "@/assets/icons/nuxt.svg";
-import tailwindImage from "@/assets/icons/tailwind.svg";
 
 function getImageUrl(image: string) {
     return new URL(`../assets/images/${image}`, import.meta.url).href;
@@ -13,8 +11,8 @@ export const frProjects: Project[] = [
         image: getImageUrl("portfolio.png"),
         github: "https://github.com/gueriboutmathieu/portfolio",
         technologies: [
-            { name: "Nuxt.js", icon: nuxtImage },
-            { name: "TailwindCSS", icon: tailwindImage },
+            { name: "Nuxt.js", icon: "logos:nuxt-icon" },
+            { name: "TailwindCSS", icon: "devicon:tailwindcss" },
         ],
     },
     {
@@ -25,12 +23,12 @@ export const frProjects: Project[] = [
         image: getImageUrl("meri.png"),
         github: "https://github.com/gueriboutmathieu/meri_app",
         technologies: [
-            { name: "Python", icon: "" },
-            { name: "FastAPI", icon: "" },
-            { name: "PostgreSQL", icon: "" },
-            { name: "OpenAI", icon: "" },
-            { name: "Nuxt.js", icon: "" },
-            { name: "TailwindCSS", icon: tailwindImage },
+            { name: "Python", icon: "devicon:python" },
+            { name: "FastAPI", icon: "devicon:fastapi" },
+            { name: "PostgreSQL", icon: "devicon:postgresql" },
+            { name: "OpenAI", icon: "logos:openai-icon" },
+            { name: "Nuxt.js", icon: "logos:nuxt-icon" },
+            { name: "TailwindCSS", icon: "devicon:tailwindcss" },
         ],
     },
     {
@@ -41,11 +39,11 @@ export const frProjects: Project[] = [
         image: getImageUrl("flare.png"),
         github: "https://github.com/gueriboutmathieu/flare_app",
         technologies: [
-            { name: "Python", icon: "" },
-            { name: "FastAPI", icon: "" },
-            { name: "PostgreSQL", icon: "" },
-            { name: "Nuxt.js", icon: "" },
-            { name: "TailwindCSS", icon: tailwindImage },
+            { name: "Python", icon: "devicon:python" },
+            { name: "FastAPI", icon: "devicon:fastapi" },
+            { name: "PostgreSQL", icon: "devicon:postgresql" },
+            { name: "Nuxt.js", icon: "logos:nuxt-icon" },
+            { name: "TailwindCSS", icon: "devicon:tailwindcss" },
         ],
     },
 ];
@@ -57,8 +55,8 @@ export const enProjects: Project[] = [
         image: getImageUrl("portfolio.png"),
         github: "https://github.com/gueriboutmathieu/portfolio",
         technologies: [
-            { name: "Nuxt.js", icon: nuxtImage },
-            { name: "TailwindCSS", icon: tailwindImage },
+            { name: "Nuxt.js", icon: "logos:nuxt-icon" },
+            { name: "TailwindCSS", icon: "devicon:tailwindcss" },
         ],
     },
     {
@@ -69,12 +67,12 @@ export const enProjects: Project[] = [
         image: getImageUrl("meri.png"),
         github: "https://github.com/gueriboutmathieu/meri_app",
         technologies: [
-            { name: "Python", icon: "" },
-            { name: "FastAPI", icon: "" },
-            { name: "PostgreSQL", icon: "" },
-            { name: "OpenAI", icon: "" },
-            { name: "Nuxt.js", icon: "" },
-            { name: "TailwindCSS", icon: tailwindImage },
+            { name: "Python", icon: "devicon:python" },
+            { name: "FastAPI", icon: "devicon:fastapi" },
+            { name: "PostgreSQL", icon: "devicon:postgresql" },
+            { name: "OpenAI", icon: "logos:openai-icon" },
+            { name: "Nuxt.js", icon: "logos:nuxt-icon" },
+            { name: "TailwindCSS", icon: "devicon:tailwindcss" },
         ],
     },
     {
@@ -85,11 +83,11 @@ export const enProjects: Project[] = [
         image: getImageUrl("flare.png"),
         github: "https://github.com/gueriboutmathieu/flare_app",
         technologies: [
-            { name: "Python", icon: "" },
-            { name: "FastAPI", icon: "" },
-            { name: "PostgreSQL", icon: "" },
-            { name: "Nuxt.js", icon: "" },
-            { name: "TailwindCSS", icon: tailwindImage },
+            { name: "Python", icon: "devicon:python" },
+            { name: "FastAPI", icon: "devicon:fastapi" },
+            { name: "PostgreSQL", icon: "devicon:postgresql" },
+            { name: "Nuxt.js", icon: "logos:nuxt-icon" },
+            { name: "TailwindCSS", icon: "devicon:tailwindcss" },
         ],
     },
 ];

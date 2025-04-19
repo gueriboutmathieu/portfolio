@@ -3,7 +3,6 @@ import { enEducations, frEducations } from "@/data/educations";
 import { enExperiences, frExperiences } from "@/data/experiences";
 import { enProjects, frProjects } from "@/data/projects";
 import { enSkills, frSkills } from "@/data/skills";
-import { enTitle, frTitle } from "@/data/title";
 
 export const frSystemPrompt: string = `
     Je suis un développeur full stack freelance et tu es mon assistant RH.
@@ -15,7 +14,10 @@ export const frSystemPrompt: string = `
     Tu répondras en français.
 
     Voici mon profil :
-    Titre: ${frTitle}
+    Nom: Mathieu Gueribout
+    Âge: 27
+    Localisation: Bordeaux, France
+    Titre: Développeur Full-Stack Freelance
     Bio: ${frBio}
     Compétences: ${JSON.stringify(frSkills)}
     Formations: ${JSON.stringify(frEducations)}
@@ -33,7 +35,10 @@ export const enSystemPrompt: string = `
     You will answer in English.
 
     Here is my profile:
-    Title: ${enTitle}
+    Name: Mathieu Gueribout
+    Age: 27
+    Location: Bordeaux, France
+    Title: Full-Stack Freelance Developer
     Bio: ${enBio}
     Skills: ${JSON.stringify(enSkills)}
     Educations: ${JSON.stringify(enEducations)}

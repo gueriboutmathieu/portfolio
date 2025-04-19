@@ -1,52 +1,38 @@
-import { type Skill } from "../models/skill";
-
-function getImageUrl(image: string) {
-    return new URL(`../assets/icons/${image}`, import.meta.url).href;
-}
+import { type Skill } from "@/models/skill";
 
 export const frSkills: Skill[] = [
     {
-        name: "Développement back-end Python avec FastAPI, SQLAlchemy, Alembic, Pytest",
-        images: [
-            { tooltip: "Python", src: getImageUrl("python.svg") },
-            { tooltip: "FastAPI", src: getImageUrl("fastapi.svg") },
+        name: "Développement back-end Python avec FastAPI",
+        technologies: [
+            { name: "Python", icon: "devicon:python" },
+            { name: "FastAPI", icon: "devicon:fastapi" },
         ],
     },
     {
         name: "Développement front-end Typescript avec Nuxt.js, Angular, Tailwind CSS",
-        images: [
-            { tooltip: "Typescript", src: getImageUrl("typescript.svg") },
-            { tooltip: "Nuxt.js", src: getImageUrl("nuxt.svg") },
-            { tooltip: "Tailwind CSS", src: getImageUrl("tailwind.svg") },
-            { tooltip: "Angular", src: getImageUrl("angular.svg") },
+        technologies: [
+            { name: "Typescript", icon: "devicon:typescript" },
+            { name: "Nuxt.js", icon: "logos:nuxt-icon" },
+            { name: "Tailwind CSS", icon: "devicon:tailwindcss" },
         ],
     },
     {
         name: "DevOps: AWS, Kubernetes, Helm, Docker, Github Actions, Terraform",
-        images: [
-            { tooltip: "AWS", src: getImageUrl("aws.svg") },
-            { tooltip: "Kubernetes", src: getImageUrl("kubernetes.svg") },
-            { tooltip: "Helm", src: getImageUrl("helm.svg") },
-            { tooltip: "Docker", src: getImageUrl("docker.svg") },
-            { tooltip: "Github Actions", src: getImageUrl("github_actions.svg") },
-            { tooltip: "Terraform", src: getImageUrl("terraform.svg") },
-        ],
-    },
-    {
-        name: "Un peu d'expérience en développement mobile avec Flutter et Nativescript",
-        images: [
-            { tooltip: "Flutter", src: getImageUrl("flutter.svg") },
-            { tooltip: "Nativescript", src: getImageUrl("nativescript.svg") },
+        technologies: [
+            { name: "AWS", icon: "logos:aws" },
+            { name: "Kubernetes", icon: "devicon:kubernetes" },
+            { name: "Docker", icon: "logos:docker-icon" },
+            { name: "Github Actions", icon: "devicon:githubactions" },
+            { name: "Terraform", icon: "devicon:terraform" },
         ],
     },
     {
         name: "Environnement de travail: Linux, NixOS, Zsh, VSCode, Neovim",
-        images: [
-            { tooltip: "Linux", src: getImageUrl("python.svg") },
-            { tooltip: "NixOS", src: getImageUrl("nixos.svg") },
-            { tooltip: "Zsh", src: getImageUrl("zsh.svg") },
-            { tooltip: "VSCode", src: getImageUrl("vscode.svg") },
-            { tooltip: "Neovim", src: getImageUrl("neovim.svg") },
+        technologies: [
+            { name: "Linux", icon: "devicon:linux" },
+            { name: "NixOS", icon: "devicon:nixos" },
+            { name: "Zsh", icon: "devicon:zsh" },
+            { name: "VSCode", icon: "devicon:vscode" },
         ],
     },
 ];
@@ -54,46 +40,36 @@ export const frSkills: Skill[] = [
 export const enSkills: Skill[] = [
     {
         name: "Python back-end development with FastAPI, SQLAlchemy, Alembic, Pytest",
-        images: [
-            { tooltip: "Python", src: getImageUrl("python.svg") },
-            { tooltip: "FastAPI", src: getImageUrl("fastapi.svg") },
+        technologies: [
+            { name: "Python", icon: "devicon:python" },
+            { name: "FastAPI", icon: "devicon:fastapi" },
         ],
     },
     {
         name: "Front-end development with Typescript using Nuxt.js, Angular, Tailwind CSS",
-        images: [
-            { tooltip: "Typescript", src: getImageUrl("typescript.svg") },
-            { tooltip: "Nuxt.js", src: getImageUrl("nuxt.svg") },
-            { tooltip: "Tailwind CSS", src: getImageUrl("tailwind.svg") },
-            { tooltip: "Angular", src: getImageUrl("angular.svg") },
+        technologies: [
+            { name: "Typescript", icon: "devicon:typescript" },
+            { name: "Nuxt.js", icon: "logos:nuxt-icon" },
+            { name: "Tailwind CSS", icon: "devicon:tailwindcss" },
         ],
     },
     {
         name: "DevOps: AWS, Kubernetes, Helm, Docker, Github Actions, Terraform",
-        images: [
-            { tooltip: "AWS", src: getImageUrl("aws.svg") },
-            { tooltip: "Kubernetes", src: getImageUrl("kubernetes.svg") },
-            { tooltip: "Helm", src: getImageUrl("helm.svg") },
-            { tooltip: "Docker", src: getImageUrl("docker.svg") },
-            { tooltip: "Github Actions", src: getImageUrl("github_actions.svg") },
-            { tooltip: "Terraform", src: getImageUrl("terraform.svg") },
-        ],
-    },
-    {
-        name: "Some experience in mobile development with Flutter and Nativescript",
-        images: [
-            { tooltip: "Flutter", src: getImageUrl("flutter.svg") },
-            { tooltip: "Nativescript", src: getImageUrl("nativescript.svg") },
+        technologies: [
+            { name: "AWS", icon: "logos:aws" },
+            { name: "Kubernetes", icon: "devicon:kubernetes" },
+            { name: "Docker", icon: "logos:docker-icon" },
+            { name: "Github Actions", icon: "devicon:githubactions" },
+            { name: "Terraform", icon: "devicon:terraform" },
         ],
     },
     {
         name: "Work environment: Linux, NixOS, Zsh, VSCode, Neovim",
-        images: [
-            { tooltip: "Linux", src: getImageUrl("python.svg") },
-            { tooltip: "NixOS", src: getImageUrl("nixos.svg") },
-            { tooltip: "Zsh", src: getImageUrl("zsh.svg") },
-            { tooltip: "VSCode", src: getImageUrl("vscode.svg") },
-            { tooltip: "Neovim", src: getImageUrl("neovim.svg") },
+        technologies: [
+            { name: "Linux", icon: "devicon:linux" },
+            { name: "NixOS", icon: "devicon:nixos" },
+            { name: "Zsh", icon: "devicon:zsh" },
+            { name: "VSCode", icon: "devicon:vscode" },
         ],
     },
 ];

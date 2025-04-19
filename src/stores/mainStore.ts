@@ -5,19 +5,20 @@ import { Language } from "@/models/language";
 import type { Education } from "@/models/education";
 import type { Experience } from "@/models/experience";
 import type { Project } from "@/models/project";
+import type { Section } from "~/models/section";
 import type { Skill } from "@/models/skill";
 import { enBio, frBio } from "@/data/bio";
 import { enEducations, frEducations } from "~/data/educations";
 import { enExperiences, frExperiences } from "@/data/experiences";
 import { enProjects, frProjects } from "@/data/projects";
+import { frSections, enSections } from "@/data/sections";
 import { enSkills, frSkills } from "@/data/skills";
 import { frSystemPrompt, enSystemPrompt } from "@/data/systemPrompt";
-import { enTitle, frTitle } from "@/data/title";
 
 export const createMainStore = defineStore("mainStore", () => {
     const _state = reactive<{
         language: Language;
-        title: string;
+        sections: Section[]
         bio: string;
         educations: Education[];
         experiences: Experience[];
@@ -26,7 +27,7 @@ export const createMainStore = defineStore("mainStore", () => {
         systemPrompt: string;
     }>({
         language: Language.FR,
-        title: frTitle,
+        sections: frSections,
         bio: frBio,
         educations: frEducations,
         experiences: frExperiences,
@@ -42,7 +43,7 @@ export const createMainStore = defineStore("mainStore", () => {
 
     const setLanguage = (language: Language): void => {
         _state.language = language;
-        _state.title = language === Language.FR ? frTitle : enTitle;
+        _state.sections = language === Language.FR ? frSections : enSections;
         _state.bio = language === Language.FR ? frBio : enBio;
         _state.educations = language === Language.FR ? frEducations : enEducations;
         _state.experiences = language === Language.FR ? frExperiences : enExperiences;

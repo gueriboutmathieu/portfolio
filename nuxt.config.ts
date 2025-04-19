@@ -8,7 +8,15 @@ export default defineNuxtConfig({
         baseURL: "/",
     },
     srcDir: "src/",
-    modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt", "@nuxtjs/plausible", "@nuxtjs/device", "@nuxt/content"],
+    modules: [
+        "@nuxtjs/robots",
+        "@nuxt/content",
+        "@nuxt/icon",
+        "@nuxtjs/device",
+        "@nuxtjs/plausible",
+        "@nuxtjs/tailwindcss",
+        "@pinia/nuxt",
+    ],
     plausible: {
         domain: "gueriboutmathieu.com",
         apiHost: "https://analytics.gueriboutmathieu.com",
@@ -16,7 +24,7 @@ export default defineNuxtConfig({
     vite: {
         plugins: [require("vite-svg-loader")()],
     },
-    css: ["@/assets/css/tailwind.css", "@/assets/css/fonts.css", "@fortawesome/fontawesome-svg-core/styles.css"],
+    css: ["@/assets/fonts.css"],
     tailwindcss: {
         exposeConfig: true,
         config: {

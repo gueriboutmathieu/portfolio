@@ -13,7 +13,7 @@ export const frExperiences: Experience[] = [
     {
         title: "Développeur Full-Stack",
         company: "Araïko.ai",
-        companyDescription: "Conseil et apport de solutions clés en mains en Data / IA",
+        companyDescription: "Conseil et apport de solutions clés en mains en Data / IA, apprentissage puis CDI",
         location: "Lyon, France",
         startDate: new Date("2020-12"),
         endDate: new Date("2024-10"),
