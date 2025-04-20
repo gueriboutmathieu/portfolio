@@ -1,7 +1,7 @@
 <template>
     <div class="h-full w-full flex items-center justify-start relative">
         <span
-            class="absolute left-0 right-0 text-center max-[350px]:top-[70px] max-[640px]:top-24 min-[640px]:top-7 max-[350px]:text-2xl min-[350px]:text-3xl font-bold"
+            class="absolute left-0 right-0 text-center max-[350px]:top-20 max-[640px]:top-24 min-[640px]:top-7 max-[350px]:text-2xl min-[350px]:text-3xl font-bold"
         >
             {{ language === Language.FR ? "Expériences" : "Experience" }}
         </span>
@@ -119,7 +119,7 @@
 
         <div
             v-show="showExperienceModal"
-            class="absolute bottom-0 top-0 left-0 right-0 z-20 h-full w-full backdrop-blur-md p-5"
+            class="absolute bottom-0 top-0 left-0 right-0 z-20 h-full w-full backdrop-blur-xl p-5"
             @wheel.stop
             @touchmove.stop
         >

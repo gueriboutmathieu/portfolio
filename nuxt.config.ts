@@ -38,9 +38,9 @@ export default defineNuxtConfig({
     },
     runtimeConfig: {
         public: {
-            mistral: {
-                apiKey: process.env.MISTRAL_API_KEY,
-                model: process.env.MISTRA_MODEL,
+            openai: {
+                apiKey: process.env.OPENAI_API_KEY,
+                model: process.env.OPENAI_MODEL,
             },
         },
     },

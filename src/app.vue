@@ -13,8 +13,8 @@ const nuxtApp = useNuxtApp();
 
 const mainStore = createMainStore();
 const chatbotService: ChatbotService = createChatbotService(
-    runtimeConfig.public.mistral.apiKey,
-    runtimeConfig.public.mistral.model,
+    runtimeConfig.public.openai.apiKey,
+    runtimeConfig.public.openai.model,
     mainStore,
 );
 

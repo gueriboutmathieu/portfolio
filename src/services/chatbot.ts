@@ -1,27 +1,32 @@
-import { Mistral } from "@mistralai/mistralai";
+import { OpenAI } from "openai";
 import type { MainStore } from "@/stores/mainStore";
 
 export type ChatbotService = {
-    query: (prompt: string) => Promise<string>;
+    query: (prompt: string) => Promise<void>;
 };
 
 export function createChatbotService(apiKey: string, model: string, mainStore: MainStore): ChatbotService {
-    const client = new Mistral({ apiKey: apiKey });
+    const client = new OpenAI({ apiKey: apiKey, dangerouslyAllowBrowser: true });
     const _model = model;
     const systemPrompt = computed(function () {
         return mainStore.state.systemPrompt;
     });
 
-    const query = async function (prompt: string): Promise<string> {
-        const response = await client.chat.complete({
+    const query = async function (prompt: string): Promise<void> {
+        mainStore.addChatMessage({ role: "user", content: prompt });
+
+        const chatMessages = mainStore.state.chatMessages;
+
+        const response = await client.chat.completions.create({
             model: _model,
             temperature: 0,
             messages: [
                 { role: "system", content: systemPrompt.value },
-                { role: "user", content: prompt },
+                ...chatMessages,
             ],
         });
-        return response.choices![0].message.content as string;
+        
+        mainStore.addChatMessage({ role: "assistant", content: response.choices[0].message.content as string });
     };
 
     return { query };

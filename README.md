@@ -12,6 +12,13 @@ pnpm i
 
 ## Run locally
 
+You need to create a `.env` file with these values:
+
+```
+NUXT_PUBLIC_OPENAI_MODEL=gpt-4.1-nano
+NUXT_PUBLIC_OPENAI_API_KEY=<openai-api-key>
+```
+
 Start the development server on `http://localhost:3000`:
 
 ```shell

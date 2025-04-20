@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full w-full bg-dark z-0">
+    <div class="h-full w-full bg-dark">
         <section
             id="home"
             class="section h-full w-full"
@@ -68,9 +68,8 @@
     <div class="absolute top-5 right-5">
         <LanguageSwitcher />
     </div>
-    <!-- <div class="absolute bottom-5 right-5">
-        <Chatbot />
-    </div> -->
+
+    <Chatbot />
 </template>
 
 <script setup lang="ts">

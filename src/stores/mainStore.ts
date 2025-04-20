@@ -2,6 +2,7 @@ import cloneDeep from "lodash.clonedeep";
 import { defineStore } from "pinia";
 
 import { Language } from "@/models/language";
+import type { ChatMessage } from "@/models/chatMessage";
 import type { Education } from "@/models/education";
 import type { Experience } from "@/models/experience";
 import type { Project } from "@/models/project";
@@ -25,6 +26,7 @@ export const createMainStore = defineStore("mainStore", () => {
         skills: Skill[];
         projects: Project[];
         systemPrompt: string;
+        chatMessages: ChatMessage[];
     }>({
         language: Language.FR,
         sections: frSections,
@@ -34,6 +36,7 @@ export const createMainStore = defineStore("mainStore", () => {
         skills: frSkills,
         projects: frProjects,
         systemPrompt: frSystemPrompt,
+        chatMessages: [],
     });
 
     const state = computed(function (): typeof _state {
@@ -52,9 +55,19 @@ export const createMainStore = defineStore("mainStore", () => {
         _state.systemPrompt = language === Language.FR ? frSystemPrompt : enSystemPrompt;
     };
 
+    const addChatMessage = (message: ChatMessage): void => {
+        _state.chatMessages.push(message);
+    }
+
+    const resetChat = (): void => {
+        _state.chatMessages = [];
+    }
+
     return {
         state,
         setLanguage,
+        addChatMessage,
+        resetChat,
     };
 });
 

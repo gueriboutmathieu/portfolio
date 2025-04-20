@@ -1,12 +1,12 @@
 <template>
     <div class="h-full w-full flex items-center justify-center relative">
         <span
-            class="absolute left-0 right-0 text-center max-[350px]:top-[70px] max-[640px]:top-24 min-[640px]:top-7 max-[350px]:text-2xl min-[350px]:text-3xl font-bold"
+            class="absolute left-0 right-0 text-center max-[350px]:top-20 max-[640px]:top-24 min-[640px]:top-7 max-[350px]:text-2xl min-[350px]:text-3xl font-bold"
         >
             {{ language === Language.FR ? "Compétences" : "Skills" }}
         </span>
 
-        <div class="flex flex-col items-start justify-start max-[350px]:gap-2.5 min-[350px]:gap-5 px-5">
+        <div class="flex flex-col items-start justify-start max-[350px]:gap-2.5 min-[350px]:gap-5 px-5 max-[350px]:pt-10">
             <div v-for="skill in skills">
                 <span class="max-[350px]:text-xs max-[640px]:text-lg min-[640px]:text-xl">{{ skill.name }}</span>
                 <div
