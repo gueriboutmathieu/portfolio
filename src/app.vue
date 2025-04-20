@@ -1,5 +1,5 @@
 <template>
-    <div class="h-screen w-screen bg-dark font-[FiraSans] text-white overflow-hidden">
+    <div class="h-[100dvh] w-[100dvw] bg-dark font-[FiraSans] text-white overflow-hidden">
         <NuxtPage />
     </div>
 </template>

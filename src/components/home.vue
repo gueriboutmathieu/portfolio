@@ -1,7 +1,7 @@
 <template>
     <div class="h-full w-full flex items-center justify-center">
         <div class="flex flex-col gap-2.5 item-start justify-center">
-            <img src="@/assets/images/profile.jpeg" class="h-[25vh] w-fit flex self-center rounded-full" />
+            <img src="@/assets/images/profile.jpeg" class="h-[25vh] aspect-square flex self-center rounded-full" />
             <span class="max-[480px]:text-sm max-[640px]:text-lg min-[640px]:text-xl pt-10">{{
                 language === Language.FR ? "Hello, je suis" : "Hi, I'm"
             }}</span>
