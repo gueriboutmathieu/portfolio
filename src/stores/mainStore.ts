@@ -57,11 +57,11 @@ export const createMainStore = defineStore("mainStore", () => {
 
     const addChatMessage = (message: ChatMessage): void => {
         _state.chatMessages.push(message);
-    }
+    };
 
     const resetChat = (): void => {
         _state.chatMessages = [];
-    }
+    };
 
     return {
         state,

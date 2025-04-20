@@ -20,12 +20,9 @@ export function createChatbotService(apiKey: string, model: string, mainStore: M
         const response = await client.chat.completions.create({
             model: _model,
             temperature: 0,
-            messages: [
-                { role: "system", content: systemPrompt.value },
-                ...chatMessages,
-            ],
+            messages: [{ role: "system", content: systemPrompt.value }, ...chatMessages],
         });
-        
+
         mainStore.addChatMessage({ role: "assistant", content: response.choices[0].message.content as string });
     };
 

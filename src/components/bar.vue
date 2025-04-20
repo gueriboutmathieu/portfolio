@@ -19,7 +19,7 @@
             <Icon
                 :id="'icon-' + section.title"
                 :name="section.icon"
-                class="max-[350px]:text-2xl max-[640px]:text-3xl min-[640px]:text-5xl"
+                class="max-[480px]:text-2xl max-[640px]:text-3xl min-[640px]:text-5xl"
             />
             <span
                 :id="'tooltip-' + section.title"

@@ -1,12 +1,12 @@
 <template>
     <div class="h-full w-full flex items-center justify-center relative">
         <span
-            class="absolute left-0 right-0 text-center max-[350px]:top-[70px] max-[640px]:top-24 min-[640px]:top-7 max-[350px]:text-2xl min-[350px]:text-3xl font-bold"
+            class="absolute left-0 right-0 text-center max-[480px]:top-[70px] max-[640px]:top-24 min-[640px]:top-7 max-[480px]:text-2xl min-[480px]:text-3xl font-bold"
         >
             Contact
         </span>
 
-        <div class="flex flex-row items-center justify-center max-[640px]:gap-5 min-[640px]:gap-20">
+        <div class="flex flex-row items-center justify-center max-[640px]:gap-5 min-[640px]:gap-10">
             <a
                 v-for="contactLink in contactLinks"
                 :href="contactLink.link"
@@ -16,18 +16,18 @@
                 <Icon
                     v-if="contactLink.iconType === 'nuxtIcon'"
                     :name="contactLink.icon"
-                    class="max-[350px]:text-5xl max-[640px]:text-7xl min-[640px]:text-9xl"
+                    class="max-[480px]:text-4xl max-[640px]:text-6xl min-[640px]:text-8xl"
                     :class="contactLink.iconExtraClasses"
                 />
                 <component
                     v-else
                     :is="contactLink.icon"
-                    class="h-full w-full aspect-square max-[350px]:w-[3rem] max-[640px]:w-[4.5rem] min-[640px]:w-[8rem] fill-white"
+                    class="h-full w-full aspect-square max-[480px]:w-[2.25rem] max-[640px]:w-[3.75rem] min-[640px]:w-[6rem] fill-white"
                     :class="contactLink.iconExtraClasses"
                 />
                 <span
-                    class="absolute -top-10 max-[350px]:text-xl max-[640px]:text-2xl min-[640px]:text-3xl font-bold text-nowrap opacity-0 group-hover:opacity-100 group-active:opacity-100 scale-0 group-hover:scale-100 group-active:scale-100"
-                    :class="'text-' + contactLink.iconColor"
+                    class="absolute -top-10 max-[480px]:text-xl max-[640px]:text-2xl min-[640px]:text-3xl font-bold text-nowrap opacity-0 group-hover:opacity-100 group-active:opacity-100 scale-0 group-hover:scale-100 group-active:scale-100"
+                    :class="contactLink.iconColor"
                 >
                     {{ contactLink.tooltip }}
                 </span>
@@ -53,7 +53,7 @@ const contactLinks: ContactLink[] = [
         tooltip: "Github",
         iconType: "nuxtIcon",
         icon: "mdi:github",
-        iconColor: "purple",
+        iconColor: "text-purple",
         iconExtraClasses: "group-hover:text-purple group-active:text-purple",
         link: "https://github.com/gueriboutmathieu",
     },
@@ -61,7 +61,7 @@ const contactLinks: ContactLink[] = [
         tooltip: "LinkedIn",
         iconType: "nuxtIcon",
         icon: "mdi:linkedin",
-        iconColor: "lightBlue",
+        iconColor: "text-lightBlue",
         iconExtraClasses: "group-hover:text-lightBlue group-active:text-lightBlue",
         link: "https://linkedin.com/in/mathieu-gueribout",
     },
@@ -69,7 +69,7 @@ const contactLinks: ContactLink[] = [
         tooltip: "Malt",
         iconType: "svg",
         icon: MaltIcon,
-        iconColor: "red",
+        iconColor: "text-red",
         iconExtraClasses: "group-hover:fill-red group-active:fill-red",
         link: "https://malt.fr/profile/mathieugueribout",
     },
@@ -77,7 +77,7 @@ const contactLinks: ContactLink[] = [
         tooltip: "Email",
         iconType: "nuxtIcon",
         icon: "ic:round-email",
-        iconColor: "yellow",
+        iconColor: "text-yellow",
         iconExtraClasses: "group-hover:text-yellow group-active:text-yellow",
         link: "mailto:gueribout.mathieu@protonmail.com",
     },

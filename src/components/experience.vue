@@ -1,7 +1,7 @@
 <template>
     <div class="h-full w-full flex items-center justify-start relative">
         <span
-            class="absolute left-0 right-0 text-center max-[350px]:top-20 max-[640px]:top-24 min-[640px]:top-7 max-[350px]:text-2xl min-[350px]:text-3xl font-bold"
+            class="absolute left-0 right-0 text-center max-[480px]:top-20 max-[640px]:top-24 min-[640px]:top-7 max-[480px]:text-2xl min-[480px]:text-3xl font-bold"
         >
             {{ language === Language.FR ? "Expériences" : "Experience" }}
         </span>
@@ -12,60 +12,60 @@
             :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
         >
             <div
-                class="max-h-[90vh] max-w-screen-2xl flex flex-col items-start justify-start max-[640px]:gap-2.5 min-[640px]:gap-5 bg-darkLight rounded-md shadow-xl max-[350px]:p-2.5 min-[350px]:p-5"
+                class="max-h-[90vh] max-w-screen-2xl flex flex-col items-start justify-start max-[640px]:gap-2.5 min-[640px]:gap-5 bg-darkLight rounded-md shadow-xl max-[480px]:p-2.5 min-[480px]:p-5"
             >
-                <span class="max-[350px]:text-lg max-[640px]:text-xl min-[640px]:text-2xl font-bold">
+                <span class="max-[480px]:text-lg max-[640px]:text-xl min-[640px]:text-2xl font-bold">
                     {{ experience.title }}
                 </span>
 
-                <div v-if="!isMobile" class="flex flex-col gap-2.5">
+                <div v-if="!isMobileOrTablet" class="flex flex-col gap-2.5">
                     <div class="flex flex-row gap-5">
                         <div class="flex flex-row items-center gap-2.5">
                             <Icon
-                                class="max-[350px]:text-lg max-[640px]:text-xl min-[640px]:text-2xl aspect-square"
+                                class="max-[480px]:text-lg max-[640px]:text-xl min-[640px]:text-2xl aspect-square"
                                 name="ic:round-factory"
                             />
-                            <span class="max-[350px]:text-xs max-[640px]:text-sm min-[640px]:text-lg">
+                            <span class="max-[480px]:text-sm max-[1920px]:text-md min-[1920px]:text-lg">
                                 {{ experience.company }}
                             </span>
                         </div>
                         <div class="flex flex-row items-center gap-2.5">
                             <Icon
-                                class="max-[350px]:text-lg max-[640px]:text-xl min-[640px]:text-2xl aspect-square"
+                                class="max-[480px]:text-lg max-[640px]:text-xl min-[640px]:text-2xl aspect-square"
                                 name="ic:round-location-on"
                             />
-                            <span class="max-[350px]:text-xs max-[640px]:text-sm min-[640px]:text-lg">
+                            <span class="max-[480px]:text-sm max-[1920px]:text-md min-[1920px]:text-lg">
                                 {{ experience.location }}
                             </span>
                         </div>
                         <div class="flex flex-row items-center gap-2.5">
                             <Icon
-                                class="max-[350px]:text-lg max-[640px]:text-xl min-[640px]:text-2xl aspect-square"
+                                class="max-[480px]:text-lg max-[640px]:text-xl min-[640px]:text-2xl aspect-square"
                                 name="ic:round-hourglass-empty"
                             />
-                            <span class="max-[350px]:text-xs max-[640px]:text-sm min-[640px]:text-lg">
+                            <span class="max-[480px]:text-sm max-[1920px]:text-md min-[1920px]:text-lg">
                                 {{ formatDates(experience.startDate, experience.endDate) }}
                             </span>
                         </div>
                     </div>
                     <div class="flex flex-row items-center gap-2.5">
                         <Icon
-                            class="max-[350px]:text-lg max-[640px]:text-xl min-[640px]:text-2xl aspect-square"
+                            class="max-[480px]:text-lg max-[640px]:text-xl min-[640px]:text-2xl aspect-square"
                             name="ic:round-info"
                         />
-                        <span class="max-[350px]:text-xs max-[640px]:text-sm min-[640px]:text-lg">
+                        <span class="max-[480px]:text-sm max-[1920px]:text-md min-[1920px]:text-lg">
                             {{ experience.companyDescription }}
                         </span>
                     </div>
                     <div class="flex flex-row items-start gap-2.5">
                         <Icon
-                            class="max-[350px]:text-lg max-[640px]:text-xl min-[640px]:text-2xl aspect-square"
+                            class="max-[480px]:text-lg max-[640px]:text-xl min-[640px]:text-2xl aspect-square"
                             name="ic:round-checklist"
                         />
                         <div class="flex flex-col">
                             <div
                                 v-for="mission in experience.missions"
-                                class="flex flex-row gap-1 max-[350px]:text-xs max-[640px]:text-sm min-[640px]:text-lg"
+                                class="flex flex-row gap-1 max-[480px]:text-sm max-[640px]:text-md min-[1920px]:text-lg"
                             >
                                 <span>·</span>
                                 <span>{{ mission }}</span>
@@ -76,32 +76,32 @@
 
                 <div v-else class="flex flex-col gap-2.5">
                     <div class="flex flex-row items-center gap-2.5">
-                        <Icon class="max-[350px]:text-lg max-[640px]:text-xl aspect-square" name="ic:round-factory" />
-                        <span class="max-[350px]:text-sm max-[640px]:text-md">
+                        <Icon class="max-[480px]:text-lg max-[640px]:text-xl aspect-square" name="ic:round-factory" />
+                        <span class="max-[480px]:text-sm max-[640px]:text-md">
                             {{ experience.company }}
                         </span>
                     </div>
                     <div class="flex flex-row items-center gap-2.5">
                         <Icon
-                            class="max-[350px]:text-lg max-[640px]:text-xl aspect-square"
+                            class="max-[480px]:text-lg max-[640px]:text-xl aspect-square"
                             name="ic:round-location-on"
                         />
-                        <span class="max-[350px]:text-sm max-[640px]:text-md">
+                        <span class="max-[480px]:text-sm max-[640px]:text-md">
                             {{ experience.location }}
                         </span>
                     </div>
                     <div class="flex flex-row items-center gap-2.5">
                         <Icon
-                            class="max-[350px]:text-lg max-[640px]:text-xl aspect-square"
+                            class="max-[480px]:text-lg max-[640px]:text-xl aspect-square"
                             name="ic:round-hourglass-empty"
                         />
-                        <span class="max-[350px]:text-sm max-[640px]:text-md">
+                        <span class="max-[480px]:text-sm max-[640px]:text-md">
                             {{ formatDates(experience.startDate, experience.endDate) }}
                         </span>
                     </div>
                     <div class="flex flex-row items-center gap-2.5">
-                        <Icon class="max-[350px]:text-lg max-[640px]:text-xl aspect-square" name="ic:round-info" />
-                        <span class="max-[350px]:text-sm max-[640px]:text-md">
+                        <Icon class="max-[480px]:text-lg max-[640px]:text-xl aspect-square" name="ic:round-info" />
+                        <span class="max-[480px]:text-sm max-[640px]:text-md">
                             {{ experience.companyDescription }}
                         </span>
                     </div>
@@ -127,11 +127,11 @@
                 class="h-full w-full flex flex-col gap-2.5 p-5 overflow-y-auto bg-darkLight shadow-2xl rounded-md modal"
             >
                 <div class="flex flex-row items-start justify-between gap-5">
-                    <span class="max-[350px]:text-xl min-[350px]:text-2xl font-bold text-balance">
+                    <span class="max-[480px]:text-xl min-[480px]:text-2xl font-bold text-balance">
                         {{ currentExperience.title }}
                     </span>
                     <button
-                        class="aspect-square rounded-md bg-dark text-red max-[350px]:text-3xl min-[350px]:text-4xl active:bg-red active:text-dark"
+                        class="aspect-square rounded-md bg-dark text-red max-[480px]:text-3xl min-[480px]:text-4xl active:bg-red active:text-dark"
                         @click="toggleExperienceModal"
                     >
                         <Icon name="ic:round-close" />
@@ -139,38 +139,38 @@
                 </div>
 
                 <div class="flex flex-row items-center gap-2.5">
-                    <Icon class="max-[350px]:text-xl min-[640px]:text-2xl aspect-square" name="ic:round-factory" />
-                    <span class="max-[350px]:text-md min-[640px]:text-lg">
+                    <Icon class="max-[480px]:text-xl min-[640px]:text-2xl aspect-square" name="ic:round-factory" />
+                    <span class="max-[480px]:text-md min-[640px]:text-lg">
                         {{ currentExperience.company }}
                     </span>
                 </div>
                 <div class="flex flex-row items-center gap-2.5">
-                    <Icon class="max-[350px]:text-xl min-[640px]:text-2xl aspect-square" name="ic:round-location-on" />
-                    <span class="max-[350px]:text-md min-[640px]:text-lg">
+                    <Icon class="max-[480px]:text-xl min-[640px]:text-2xl aspect-square" name="ic:round-location-on" />
+                    <span class="max-[480px]:text-md min-[640px]:text-lg">
                         {{ currentExperience.location }}
                     </span>
                 </div>
                 <div class="flex flex-row items-center gap-2.5">
                     <Icon
-                        class="max-[350px]:text-xl min-[640px]:text-2xl aspect-square"
+                        class="max-[480px]:text-xl min-[640px]:text-2xl aspect-square"
                         name="ic:round-hourglass-empty"
                     />
-                    <span class="max-[350px]:text-md min-[640px]:text-lg text-wrap">
+                    <span class="max-[480px]:text-md min-[640px]:text-lg text-wrap">
                         {{ formatDates(currentExperience.startDate, currentExperience.endDate) }}
                     </span>
                 </div>
                 <div class="flex flex-row items-center gap-2.5">
-                    <Icon class="max-[350px]:text-xl min-[640px]:text-2xl aspect-square" name="ic:round-info" />
-                    <span class="max-[350px]:text-md min-[640px]:text-lg">
+                    <Icon class="max-[480px]:text-xl min-[640px]:text-2xl aspect-square" name="ic:round-info" />
+                    <span class="max-[480px]:text-md min-[640px]:text-lg">
                         {{ currentExperience.companyDescription }}
                     </span>
                 </div>
                 <div class="flex flex-row items-start gap-2.5">
-                    <Icon class="max-[350px]:text-xl min-[640px]:text-2xl aspect-square" name="ic:round-checklist" />
+                    <Icon class="max-[480px]:text-xl min-[640px]:text-2xl aspect-square" name="ic:round-checklist" />
                     <div class="flex flex-col">
                         <div
                             v-for="mission in currentExperience.missions"
-                            class="flex flex-row gap-1 max-[350px]:text-md min-[640px]:text-lg"
+                            class="flex flex-row gap-1 max-[480px]:text-md min-[640px]:text-lg"
                         >
                             <span>·</span>
                             <span>{{ mission }}</span>
@@ -181,28 +181,28 @@
         </div>
 
         <button
-            class="absolute max-[350px]:bottom-[70px] max-[640px]:bottom-28 max-[640px]:left-5 min-[640px]:left-5 z-10 rounded-full p-1 aspect-square cursor-pointer flex items-center justify-center hover:bg-orange hover:text-dark active:bg-orange active:text-dark"
+            class="absolute max-[480px]:bottom-[70px] max-[640px]:bottom-28 max-[640px]:left-5 min-[640px]:left-5 z-10 rounded-full p-1 aspect-square cursor-pointer flex items-center justify-center hover:bg-orange hover:text-dark active:bg-orange active:text-dark"
             @click="goToPreviousExperience"
         >
-            <Icon name="ic:round-arrow-back" class="max-[350px]:text-2xl max-[640px]:text-3xl min-[640px]:text-5xl" />
+            <Icon name="ic:round-arrow-back" class="max-[480px]:text-2xl max-[640px]:text-3xl min-[640px]:text-5xl" />
         </button>
 
         <button
-            class="absolute max-[350px]:bottom-[70px] max-[640px]:bottom-28 max-[640px]:right-5 min-[640px]:right-5 z-10 rounded-full p-1 aspect-square cursor-pointer flex items-center justify-center hover:bg-orange hover:text-dark active:bg-orange active:text-dark"
+            class="absolute max-[480px]:bottom-[70px] max-[640px]:bottom-28 max-[640px]:right-5 min-[640px]:right-5 z-10 rounded-full p-1 aspect-square cursor-pointer flex items-center justify-center hover:bg-orange hover:text-dark active:bg-orange active:text-dark"
             @click="goToNextExperience"
         >
             <Icon
                 name="ic:round-arrow-forward"
-                class="max-[350px]:text-2xl max-[640px]:text-3xl min-[640px]:text-5xl"
+                class="max-[480px]:text-2xl max-[640px]:text-3xl min-[640px]:text-5xl"
             />
         </button>
 
         <div
-            class="absolute left-0 right-0 max-[350px]:bottom-[70px] max-[640px]:bottom-28 min-[640px]:top-24 pb-2.5 flex flex-row self-center items-center justify-center gap-2.5 z-0"
+            class="absolute left-0 right-0 max-[480px]:bottom-[70px] max-[640px]:bottom-28 min-[640px]:top-24 pb-2.5 flex flex-row self-center items-center justify-center gap-2.5 z-0"
         >
             <div
                 v-for="(_, index) in experiences"
-                class="bg-darkLight rounded-full aspect-square max-[350px]:w-3 min-[350px]:w-5 cursor-pointer"
+                class="bg-darkLight rounded-full aspect-square max-[480px]:w-3 min-[480px]:w-5 cursor-pointer"
                 :class="{ 'bg-orange': index === currentIndex }"
                 @click="goToExperience(index)"
             ></div>
@@ -215,7 +215,7 @@ import type { MainStore } from "@/stores/mainStore";
 import { Language } from "@/models/language";
 import type { Experience } from "@/models/experience";
 
-const isMobile = useDevice().isMobile;
+const isMobileOrTablet = useDevice().isMobileOrTablet;
 
 const mainStore = useNuxtApp().$mainStore as MainStore;
 const language = computed(() => mainStore.state.language);
