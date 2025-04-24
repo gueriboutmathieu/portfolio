@@ -13,10 +13,12 @@ const nuxtApp = useNuxtApp();
 
 const mainStore = createMainStore();
 const chatbotService: ChatbotService = createChatbotService(
-    runtimeConfig.public.openai.apiKey,
+    runtimeConfig.public.api.baseUrl,
+    runtimeConfig.public.api.publicKey,
     runtimeConfig.public.openai.model,
     mainStore,
 );
+await chatbotService.init();
 
 nuxtApp.provide("mainStore", mainStore);
 nuxtApp.provide("chatbotService", chatbotService);

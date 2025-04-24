@@ -38,8 +38,11 @@ export default defineNuxtConfig({
     },
     runtimeConfig: {
         public: {
+            api: {
+                baseUrl: process.env.API_BASE_URL,
+                publicKey: process.env.API_PUBLIC_KEY,
+            },
             openai: {
-                apiKey: process.env.OPENAI_API_KEY,
                 model: process.env.OPENAI_MODEL,
             },
         },

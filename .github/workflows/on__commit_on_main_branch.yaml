@@ -20,4 +20,4 @@ jobs:
       deploy-to-github-pages: true
       custom-domain-name: "gueriboutmathieu.com"
       env-vars: '{"NUXT_PUBLIC_OPENAI_MODEL": "gpt-4.1-nano"}'
-      secret-env-vars: '{"NUXT_PUBLIC_OPENAI_API_KEY": "OPENAI_API_KEY"}'
+      secret-env-vars: '{"NUXT_PUBLIC_API_BASE_URL": "API_BASE_URL", "NUXT_PUBLIC_API_PUBLIC_KEY": "API_PUBLIC_KEY"}'
