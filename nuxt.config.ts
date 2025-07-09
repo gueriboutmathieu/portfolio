@@ -13,7 +13,7 @@ export default defineNuxtConfig({
         "@nuxt/content",
         "@nuxt/icon",
         "@nuxtjs/device",
-        "@nuxtjs/plausible",
+        // "@nuxtjs/plausible",
         "@nuxtjs/tailwindcss",
         "@pinia/nuxt",
     ],

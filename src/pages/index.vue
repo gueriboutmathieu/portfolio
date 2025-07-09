@@ -69,7 +69,7 @@
         <LanguageSwitcher />
     </div>
 
-    <Chatbot />
+    <!-- <Chatbot /> -->
 </template>
 
 <script setup lang="ts">
